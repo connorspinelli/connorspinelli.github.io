@@ -1,0 +1,6 @@
+{
+  "name": "portfolio",
+  "scripts": {
+    "start": "npx serve . --listen 8000"
+  }
+}

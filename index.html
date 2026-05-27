@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connor Spinelli — Biomedical Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">CS</a>
+        <nav class="nav-links" id="nav-links">
+          <a href="#about">About</a>
+          <div class="nav-dropdown" id="nav-projects-dropdown">
+            <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+              Projects
+              <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#projects">All Projects</a></li>
+              <li><a href="#project-wrist-catheter">Wrist Catheter Support</a></li>
+              <li><a href="#project-emg">EMG Pre-Processing</a></li>
+              <li><a href="#project-mri-support">MRI Support Structure</a></li>
+              <li><a href="#project-control-box">StretchWrist Control Box</a></li>
+              <li><a href="#project-tolerancing">Tolerancing Project</a></li>
+              <li><a href="#project-digoxin">Digoxin Compartment Model</a></li>
+            </ul>
+          </div>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+
+      <!-- Background layers -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb--1"></div>
+        <div class="hero-orb hero-orb--2"></div>
+        <div class="hero-orb hero-orb--3"></div>
+        <!-- Scrolling ECG line -->
+        <div class="hero-ecg-wrap">
+          <div class="hero-ecg-track">
+            <svg class="hero-ecg-svg" viewBox="0 0 800 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="0,20 100,20 110,20 118,13 126,20 175,20 192,20 196,3 202,37 208,20 220,20 245,20 260,11 278,11 294,20 400,20 500,20 510,20 518,13 526,20 575,20 592,3 598,37 604,20 616,20 641,20 656,11 674,11 690,20 800,20" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+            <svg class="hero-ecg-svg" viewBox="0 0 800 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="0,20 100,20 110,20 118,13 126,20 175,20 192,20 196,3 202,37 208,20 220,20 245,20 260,11 278,11 294,20 400,20 500,20 510,20 518,13 526,20 575,20 592,3 598,37 604,20 616,20 641,20 656,11 674,11 690,20 800,20" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hi, I'm</p>
+        <h1 class="hero-name">Connor Spinelli</h1>
+        <p class="hero-tagline">Biomedical Engineer&nbsp;|&nbsp;Medical Device Design</p>
+        <p class="hero-sub">
+          Junior at the University of Delaware · Graduating May 2027<br />
+          Focused on prosthetics, orthotics, and AI-assisted drug delivery systems.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+        <div class="hero-specialties">
+          <span class="hero-spec">Prosthetics &amp; Orthotics</span>
+          <span class="hero-spec">Medical Device Design</span>
+          <span class="hero-spec">EMG Signal Analysis</span>
+          <span class="hero-spec">Robotic Rehabilitation</span>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a Biomedical Engineering Honors student at the University of Delaware with a
+              passion for designing devices that directly improve patient outcomes. My work centers
+              on the full engineering cycle — from concept and CAD modeling to fabrication and
+              validation — applied to clinical problems in <strong>prosthetics, orthotics, and
+              medical device design</strong>.
+            </p>
+            <p>
+              In the lab I focus on <strong>EMG signal analysis</strong> and robotic rehabilitation
+              systems for stroke patients, working with MRI-compatible hardware and custom structural
+              designs. Outside of research, my coursework spans mechanical design, biomechanics, and
+              hands-on fabrication using SolidWorks, 3D printing, CNC milling, and laser cutting.
+              I've also applied analytical modeling skills to pharmacokinetic problems — such as
+              simulating compartmental drug distribution — to strengthen my computational foundation.
+            </p>
+            <p>
+              I'm currently pursuing a 4+1 accelerated Master's in Robotics and will graduate with
+              my BS in May 2027. Outside the lab I enjoy tinkering in the makerspace, trail running,
+              and following advances in wearable assistive technology.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-number">3+ Yrs</span>
+              <span class="stat-label">CAD Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">3.6+ GPA</span>
+              <span class="stat-label">Academic Excellence</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Honors</span>
+              <span class="stat-label">Minoring in Biomechanical Engineering</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">4+1</span>
+              <span class="stat-label">Enrolling in Robotics MS Program</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects-intro" id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Engineering work spanning medical device design, biomechanics research, and computational modeling.</p>
+      </div>
+    </section>
+
+    <!-- PROJECT 1 -->
+    <section class="project-slide" id="project-wrist-catheter">
+      <div class="ps-visual ps-visual--model">
+        <model-viewer
+          src="models/wrist-support.glb"
+          alt="3D model of wrist support structure for catheter insertion"
+          camera-controls
+          auto-rotate
+          auto-rotate-delay="800"
+          rotation-per-second="18deg"
+          environment-image="legacy"
+          shadow-intensity="0.8"
+          shadow-softness="0.5"
+          exposure="1.2"
+          skybox-height="1.5"
+          camera-orbit="45deg 70deg 2.5m"
+          class="ps-model-viewer"
+        ></model-viewer>
+        <p class="ps-model-hint" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+          Drag to rotate
+        </p>
+      </div>
+      <div class="ps-content">
+        <div class="ps-meta">
+          <span class="ps-number">01</span>
+          <span class="ps-context">Junior Design</span>
+        </div>
+        <h2 class="ps-title">Wrist Support Structure for Catheter Insertion</h2>
+        <p class="ps-desc">
+          Designed to maintain proper wrist positioning and radial artery catheter securement during medical procedures, this orthotic support aims to reduce complications from catheter dislodgement and ensure consistent pressure readings. Taking the lead on concept generation, prototyping, and engineering design, the project progressed through multiple iterations before converging on a final design CNC machined from Delrin. A custom lathed hinge pin maintains the axis of rotation for the plunger spring pin mechanism, enabling repeatable, reliable positioning across a range of clinical settings.
+        </p>
+        <div class="ps-tools">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">3D Printing Prototypes</span>
+          <span class="tag">Design for Manufacturability</span>
+        </div>
+        <a href="#" class="btn btn-primary">View Project →</a>
+      </div>
+    </section>
+
+    <!-- PROJECT 2 -->
+    <section class="project-slide project-slide--flip" id="project-emg">
+      <div class="ps-visual ps-visual--pdf">
+        <iframe src="images/emg-analysis-poster.pdf" class="ps-pdf-frame" title="EMG Analysis Poster"></iframe>
+        <button class="ps-pdf-expand" data-pdf="images/emg-analysis-poster.pdf" data-title="EMG Analysis Poster" aria-label="Open poster full screen">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          Full Screen
+        </button>
+      </div>
+      <div class="ps-content">
+        <div class="ps-meta">
+          <span class="ps-number">02</span>
+          <span class="ps-context">Research Analysis</span>
+        </div>
+        <h2 class="ps-title">Effects of Pre-Processing Parameters on Stretch Reflex EMG: A Comparative Analysis</h2>
+        <p class="ps-desc">
+          There is no universal standard for surface EMG signal processing in stretch reflex studies, leaving open the question of whether conclusions about long-latency reflex amplitude depend on the chosen filtering pipeline. To address this, eight distinct pre-processing pipelines were applied to recorded subject data and their statistical effects on LLR amplitude systematically compared. The analysis confirmed that our bio signal analysis methodology is reliable — study conclusions are robust and independent of variations in filtering technique, validating the pipeline used across our lab's ongoing research.
+        </p>
+        <div class="ps-tools">
+          <span class="tag">Research</span>
+          <span class="tag">MATLAB</span>
+          <span class="tag">Signal Processing</span>
+          <span class="tag">EMG Analysis</span>
+        </div>
+        <a href="#" class="btn btn-primary">View Project →</a>
+      </div>
+    </section>
+
+    <!-- PROJECT 3 -->
+    <section class="project-slide" id="project-mri-support">
+      <div class="ps-visual ps-visual--model">
+        <model-viewer
+          src="models/mri-structure.glb"
+          alt="3D model of MRI robot support structure"
+          camera-controls
+          auto-rotate
+          auto-rotate-delay="800"
+          rotation-per-second="18deg"
+          environment-image="neutral"
+          shadow-intensity="0.35"
+          exposure="0.9"
+          class="ps-model-viewer"
+        ></model-viewer>
+        <p class="ps-model-hint" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
+          Drag to rotate
+        </p>
+      </div>
+      <div class="ps-content">
+        <div class="ps-meta">
+          <span class="ps-number">03</span>
+          <span class="ps-context">Research Engineering</span>
+        </div>
+        <h2 class="ps-title">Robot Support Structure for Stroke Patients Participating in MRI StretchWrist Studies</h2>
+        <p class="ps-desc">
+          Designed an MRI-compatible structural mounting system that positions and supports stroke patients' arms inside a high-field MRI bore during robotic wrist perturbation studies. All materials were carefully selected for MRI safety — no ferromagnetic components — while maintaining sufficient stiffness to prevent movement artifacts. The structure integrates with the existing StretchWrist robot and accommodates a range of patient arm sizes and stroke-related mobility constraints.
+        </p>
+        <div class="ps-tools">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Woodworking</span>
+          <span class="tag">MRI Safety</span>
+        </div>
+        <a href="#" class="btn btn-primary">View Project →</a>
+      </div>
+    </section>
+
+    <!-- PROJECT 4 -->
+    <section class="project-slide project-slide--flip" id="project-control-box">
+      <div class="ps-visual ps-visual--media">
+        <img src="images/control-box.png" alt="Robot control box for MRI StretchWrist" class="ps-img">
+      </div>
+      <div class="ps-content">
+        <div class="ps-meta">
+          <span class="ps-number">04</span>
+          <span class="ps-context">Research Engineering</span>
+        </div>
+        <h2 class="ps-title">Robot Control Box for MRI StretchWrist Robot</h2>
+        <p class="ps-desc">
+          Engineered the control electronics enclosure for the MRI StretchWrist robotic therapy system, ensuring reliable signal transmission and cable management in a high-field MRI environment. The enclosure organizes control cables, pneumatic lines, and sensor leads while providing RF shielding to prevent image artifacts. Designed for fast setup during experimental sessions and straightforward maintenance by research staff.
+        </p>
+        <div class="ps-tools">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Laser Cutting</span>
+          <span class="tag">Soldering</span>
+          <span class="tag">RF Shielding</span>
+        </div>
+        <a href="#" class="btn btn-primary">View Project →</a>
+      </div>
+    </section>
+
+    <!-- PROJECT 5 -->
+    <section class="project-slide" id="project-tolerancing">
+      <div class="ps-visual ps-visual--media">
+        <img src="images/tolerance-project.png?v=2" alt="Tolerancing project engineering drawings" class="ps-img">
+      </div>
+      <div class="ps-content">
+        <div class="ps-meta">
+          <span class="ps-number">05</span>
+          <span class="ps-context">Mechanical Design Course</span>
+        </div>
+        <h2 class="ps-title">Tolerancing Project for Mechanical Design Course</h2>
+        <p class="ps-desc">
+          Applied GD&amp;T principles and statistical tolerancing analysis to a multi-component mechanical assembly, balancing precision requirements against manufacturing cost and feasibility. Worst-case and root-sum-square (RSS) tolerance stack-up analyses were performed to verify that all mating interfaces met fit and function specifications across the full manufacturing variation range. The project produced complete engineering drawings with dimensioned, toleranced geometry per ASME Y14.5 standards.
+        </p>
+        <div class="ps-tools">
+          <span class="tag">Tolerancing</span>
+          <span class="tag">CNC Precision</span>
+          <span class="tag">Engineering Drawing</span>
+        </div>
+        <a href="#" class="btn btn-primary">View Project →</a>
+      </div>
+    </section>
+
+    <!-- PROJECT 6 -->
+    <section class="project-slide project-slide--flip" id="project-digoxin">
+      <div class="ps-visual ps-visual--pdf">
+        <iframe src="images/programming-project.pdf" class="ps-pdf-frame" title="Digoxin Compartment Model"></iframe>
+        <button class="ps-pdf-expand" data-pdf="images/programming-project.pdf" data-title="Digoxin Compartment Model" aria-label="Open document full screen">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+          Full Screen
+        </button>
+      </div>
+      <div class="ps-content">
+        <div class="ps-meta">
+          <span class="ps-number">06</span>
+          <span class="ps-context">Computational Modeling</span>
+        </div>
+        <h2 class="ps-title">Modeling the Concentration of Digoxin Activity after Intravenous Injection in Three Compartments</h2>
+        <p class="ps-desc">
+          Developed a three-compartment pharmacokinetic model to simulate the distribution, redistribution, and elimination of digoxin following intravenous injection, capturing drug behavior across plasma, peripheral tissues, and a deep tissue compartment. Research was supported by AI workflows — using NotebookLM for literature synthesis and Claude to accelerate MATLAB simulation development, practicing prompt engineering for efficiency, reliability, and scalability. Results clearly illustrate digoxin's narrow therapeutic window and the critical importance of precise dosing in cardiac care.
+        </p>
+        <div class="ps-tools">
+          <span class="tag">MATLAB</span>
+          <span class="tag">ODE Modeling</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Prompt Engineering</span>
+        </div>
+        <a href="#" class="btn btn-primary">View Project →</a>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">
+              <span class="skill-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </span>
+              CAD &amp; Fabrication
+            </h3>
+            <ul class="skill-list">
+              <li class="skill-item">SolidWorks</li>
+              <li class="skill-item">3D Printing</li>
+              <li class="skill-item">CNC Milling</li>
+              <li class="skill-item">Laser Cutting</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">
+              <span class="skill-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </span>
+              Programming &amp; Analysis
+            </h3>
+            <ul class="skill-list">
+              <li class="skill-item">Python</li>
+              <li class="skill-item">MATLAB</li>
+              <li class="skill-item">Signal Processing</li>
+            </ul>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">
+              <span class="skill-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+              AI &amp; Productivity
+            </h3>
+            <ul class="skill-list">
+              <li class="skill-item">AI Prompt Engineering</li>
+              <li class="skill-item">Microsoft Office</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">
+          Interested in collaborating, or just want to chat about biomedical engineering?
+          Drop me a message.
+        </p>
+        <div class="contact-wrapper">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or question..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+            <p class="form-note" id="form-status" aria-live="polite"></p>
+          </form>
+          <div class="contact-info">
+            <p class="contact-info-label">Or reach me directly</p>
+            <a href="mailto:cspin@udel.edu" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              cspin@udel.edu
+            </a>
+            <a href="https://linkedin.com/in/connorspinelli" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5m0 0a2 2 0 0 1 4 0v5"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/connorspinelli" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5 5 0 0 0 20 4.77 4.92 4.92 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A4.92 4.92 0 0 0 5 4.77a5 5 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Connor Spinelli · Built with HTML, CSS &amp; JavaScript</p>
+      </div>
+    </footer>
+
+    <!-- PDF LIGHTBOX MODAL -->
+    <div class="pdf-modal" id="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
+      <div class="pdf-modal-inner">
+        <div class="pdf-modal-header">
+          <span class="pdf-modal-title" id="pdf-modal-title"></span>
+          <button class="pdf-modal-close" id="pdf-modal-close" aria-label="Close PDF viewer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <iframe src="" class="pdf-modal-frame" id="pdf-modal-frame" title="PDF Viewer"></iframe>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
