@@ -122,12 +122,12 @@ document.querySelectorAll(
 });
 
 /* ============================================================
-   Contact form (client-side only — swap for real backend later)
+   Contact form — Formspree
    ============================================================ */
 const form       = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
 
   const name    = form.name.value.trim();
@@ -144,9 +144,29 @@ form.addEventListener('submit', e => {
     return;
   }
 
-  // Placeholder success — wire up a real endpoint (Formspree, EmailJS, etc.) here
-  setStatus('Thanks! Your message was received. I\'ll be in touch soon.', 'success');
-  form.reset();
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending…';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (response.ok) {
+      setStatus("Message sent! I'll get back to you soon.", 'success');
+      form.reset();
+    } else {
+      setStatus('Something went wrong. Please email me directly at cspin@udel.edu.', 'error');
+    }
+  } catch {
+    setStatus('Something went wrong. Please email me directly at cspin@udel.edu.', 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  }
 });
 
 function setStatus(msg, type) {

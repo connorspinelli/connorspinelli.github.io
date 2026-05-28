@@ -173,6 +173,8 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 .nav-links {
   display: flex;
   gap: 2rem;
+  align-items: center;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -1306,13 +1308,20 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
   min-height: 0;
 }
 
-/* Tolerancing project — remove padding and fill image to eliminate whitespace */
+/* Tolerancing project — tight fit with no excess whitespace */
+#project-tolerancing {
+  min-height: unset;
+}
+
 #project-tolerancing .ps-visual--media {
-  padding: 0;
+  padding: 1rem;
+  min-height: unset;
+  align-self: stretch;
 }
 
 #project-tolerancing .ps-img {
-  object-fit: cover;
+  object-fit: contain;
+  max-height: 100%;
   border-radius: 0;
 }
 
