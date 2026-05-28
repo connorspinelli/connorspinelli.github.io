@@ -563,10 +563,32 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-areas:
+    "photo text"
+    "stats text";
+  gap: 2rem 3rem;
   align-items: start;
   margin-top: 2.5rem;
 }
+
+.about-photo-wrap {
+  grid-area: photo;
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  border: 3px solid var(--clr-accent);
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12), 0 8px 32px rgba(0, 0, 0, 0.45);
+  display: block;
+}
+
+.about-text { grid-area: text; }
 
 .about-text p + p { margin-top: 1rem; }
 
@@ -575,6 +597,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 .about-text strong { color: var(--clr-text); }
 
 .about-stats {
+  grid-area: stats;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -611,6 +634,341 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
   font-size: 0.78rem;
   color: var(--clr-text-muted);
   line-height: 1.3;
+}
+
+/* ============================================================
+   Experience — Gantt Chart
+   ============================================================ */
+:root {
+  --clr-education:  #2563eb;
+  --clr-research:   #7c3aed;
+  --clr-work:       #059669;
+  --clr-leadership: #d97706;
+  --gantt-axis-h:   44px;
+  --gantt-row-h:    36px;
+  --gantt-label-w:  200px;
+}
+
+/* Legend */
+.gantt-legend {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gantt-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.gantt-legend-item::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.gantt-legend--education::before  { background: var(--clr-education); }
+.gantt-legend--research::before   { background: var(--clr-research); }
+.gantt-legend--work::before       { background: var(--clr-work); }
+.gantt-legend--leadership::before { background: var(--clr-leadership); }
+
+/* Outer grid: labels | chart */
+.gantt {
+  display: grid;
+  grid-template-columns: var(--gantt-label-w) 1fr;
+  gap: 0 0.75rem;
+  overflow: hidden;
+}
+
+/* Labels column */
+.gantt-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.gantt-axis-spacer {
+  height: var(--gantt-axis-h);
+  flex-shrink: 0;
+}
+
+.gantt-label {
+  height: var(--gantt-row-h);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Chart column */
+.gantt-chart {
+  min-width: 0;
+}
+
+/* Axis row — two sub-rows: years on top, months below */
+.gantt-axis {
+  position: relative;
+  height: var(--gantt-axis-h);
+}
+
+.gantt-axis-years {
+  position: relative;
+  height: 20px;
+}
+
+.gantt-axis-months {
+  position: relative;
+  height: 24px;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.gantt-year {
+  position: absolute;
+  bottom: 3px;
+  transform: translateX(-50%);
+  font-size: 0.72rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--clr-text);
+  letter-spacing: 0.06em;
+  pointer-events: none;
+}
+
+.gantt-month {
+  position: absolute;
+  bottom: 4px;
+  transform: translateX(-50%);
+  font-size: 0.54rem;
+  font-weight: 500;
+  font-family: var(--font-mono);
+  color: rgba(148, 163, 184, 0.5);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Rows area */
+.gantt-rows {
+  position: relative;
+}
+
+/* Grid lines */
+.gantt-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gantt-gridline {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 1px dashed rgba(51, 65, 85, 0.38);
+}
+
+.gantt-gridline--year {
+  border-left: 1px solid rgba(71, 85, 105, 0.85);
+}
+
+/* Today line */
+.gantt-today {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1.5px;
+  background: rgba(226, 232, 240, 0.45);
+  z-index: 6;
+  pointer-events: none;
+}
+
+.gantt-today-label {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.55);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+/* Individual rows */
+.gantt-row {
+  height: var(--gantt-row-h);
+  position: relative;
+}
+
+/* Bars */
+.gantt-bar {
+  position: absolute;
+  left: var(--bar-left);
+  width: var(--bar-width);
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  border-radius: 5px;
+  opacity: 0.85;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.2s, box-shadow 0.2s, height 0.15s;
+}
+
+.gantt-bar:hover,
+.gantt-bar:focus { opacity: 1; height: 24px; outline: none; z-index: 10; }
+
+.gantt-bar--education  { background: var(--clr-education); }
+.gantt-bar--research   { background: var(--clr-research); }
+.gantt-bar--work       { background: var(--clr-work); }
+.gantt-bar--leadership { background: var(--clr-leadership); }
+
+.gantt-bar--upcoming {
+  background: transparent;
+  border: 2px dashed var(--clr-education);
+  opacity: 0.55;
+}
+
+.gantt-bar--upcoming:hover,
+.gantt-bar--upcoming:focus { opacity: 1; }
+
+/* Diamond milestone — outer wrapper is NOT rotated so tooltip stays horizontal */
+.gantt-diamond-outer {
+  position: absolute;
+  left: var(--bar-left);
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.gantt-diamond-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  background: var(--clr-education);
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 2px;
+  opacity: 0.85;
+  transition: width 0.15s, height 0.15s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.gantt-diamond-outer:hover .gantt-diamond-inner,
+.gantt-diamond-outer:focus-within .gantt-diamond-inner {
+  width: 16px;
+  height: 16px;
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.5);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* Tooltip */
+.gantt-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.8rem;
+  font-size: 0.72rem;
+  color: var(--clr-text);
+  line-height: 1.55;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.gantt-bar:hover .gantt-tooltip,
+.gantt-bar:focus .gantt-tooltip,
+.gantt-diamond-outer:hover .gantt-tooltip,
+.gantt-diamond-outer:focus-within .gantt-tooltip { opacity: 1; }
+
+/* Right-edge tooltips open leftward to stay in bounds */
+.gantt-tooltip--left {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+/* Mobile fallback list — hidden on desktop */
+.gantt-mobile { display: none; }
+
+/* Mobile: show list, hide chart */
+@media (max-width: 700px) {
+  .gantt        { display: none; }
+  .gantt-legend { display: none; }
+
+  .gantt-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 1.75rem;
+    list-style: none;
+  }
+
+  .gantt-mobile-item {
+    border-left: 4px solid var(--clr-accent);
+    padding: 0.7rem 1rem;
+    background: var(--clr-bg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .gantt-mobile--education  { border-color: var(--clr-education); }
+  .gantt-mobile--research   { border-color: var(--clr-research); }
+  .gantt-mobile--work       { border-color: var(--clr-work); }
+  .gantt-mobile--leadership { border-color: var(--clr-leadership); }
+
+  .gantt-mobile-date {
+    font-size: 0.67rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--clr-text-muted);
+    text-transform: uppercase;
+  }
+
+  .gantt-mobile-item strong {
+    font-size: 0.88rem;
+    color: var(--clr-text);
+    font-family: var(--font-heading);
+  }
+
+  .gantt-mobile-item span:last-child {
+    font-size: 0.78rem;
+    color: var(--clr-text-muted);
+  }
 }
 
 /* ============================================================
@@ -1233,6 +1591,15 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "text"
+      "stats";
+  }
+
+  .about-photo {
+    width: 240px;
+    height: 240px;
   }
 
   .contact-wrapper {
@@ -1368,4 +1735,5 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
     width: 90px;
     height: 90px;
   }
+
 }
