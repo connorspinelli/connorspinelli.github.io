@@ -3,854 +3,577 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connor Spinelli - Biomedical Engineer</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.svg">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Connor Spinelli — Biomedical Engineer" />
-    <meta property="og:description" content="BME junior at the University of Delaware specializing in medical device design, CAD/fabrication, and biomechanics research. View my engineering portfolio and projects." />
-    <meta property="og:image" content="https://connorspinelli.github.io/images/headshot.png" />
+    <title>Connor Spinelli | Biomedical Engineer</title>
+    <meta name="description" content="Connor Spinelli, biomedical engineer at the University of Delaware (BS BME Honors, 4+1 MS Robotics). Medical device design, machining, rehab robotics research, and AI automation." />
+    <meta name="theme-color" content="#14110f" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:title" content="Connor Spinelli | Biomedical Engineer" />
+    <meta property="og:description" content="Biomedical engineer: devices, robotics, and the tools to build them. Capstone with Terumo Medical, rehab robotics research, machine shop TA, and AI automation at Proscia." />
+    <meta property="og:image" content="https://connorspinelli.github.io/images/og-card.jpg" />
     <meta property="og:url" content="https://connorspinelli.github.io" />
     <meta property="og:type" content="website" />
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Connor Spinelli — Biomedical Engineer" />
-    <meta name="twitter:description" content="BME junior at the University of Delaware specializing in medical device design, CAD/fabrication, and biomechanics research. View my engineering portfolio and projects." />
-    <meta name="twitter:image" content="https://connorspinelli.github.io/images/headshot.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Connor Spinelli",
+        "jobTitle": "Biomedical Engineer",
+        "alumniOf": "University of Delaware",
+        "url": "https://connorspinelli.github.io",
+        "sameAs": ["https://linkedin.com/in/connorspinelli", "https://github.com/connorspinelli"]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.classList.add('js');</script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- NAVBAR -->
-    <header class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="#hero" class="nav-logo">CS</a>
-        <nav class="nav-links" id="nav-links">
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#top" class="nav-brand" aria-label="Connor Spinelli, back to top">
+          <span class="nav-brand-mark" aria-hidden="true"></span>Connor Spinelli
+        </a>
+        <nav class="nav-links" id="nav-links" aria-label="Primary">
+          <a href="#work">Work</a>
           <a href="#about">About</a>
-          <div class="nav-dropdown" id="nav-projects-dropdown">
-            <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
-              Projects
-              <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="#projects">All Projects</a></li>
-              <li><a href="#project-wrist-catheter">Wrist Catheter Support</a></li>
-              <li><a href="#project-emg">EMG Pre-Processing</a></li>
-              <li><a href="#project-mri-support">MRI Support Structure</a></li>
-              <li><a href="#project-control-box">StretchWrist Control Box</a></li>
-              <li><a href="#project-tolerancing">Tolerancing Project</a></li>
-              <li><a href="#project-digoxin">Digoxin Compartment Model</a></li>
-              <li><a href="#project-clinical">Backpack Loading Gait Study</a></li>
-            </ul>
-          </div>
-          <a href="#skills">Skills</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#timeline">Experience</a>
+          <a href="#experience">Experience</a>
+          <a href="#life">Off the Clock</a>
           <a href="#contact">Contact</a>
+          <a href="images/resume.pdf" class="nav-cta" download="Connor_Spinelli_Resume.pdf">Résumé <span aria-hidden="true">↓</span></a>
         </nav>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span>
         </button>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
+    <main id="main">
 
-      <!-- Background layers -->
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-grid"></div>
-        <div class="hero-orb hero-orb--1"></div>
-        <div class="hero-orb hero-orb--2"></div>
-        <div class="hero-orb hero-orb--3"></div>
-        <!-- Scrolling ECG line -->
-        <div class="hero-ecg-wrap">
-          <div class="hero-ecg-track">
-            <svg class="hero-ecg-svg" viewBox="0 0 800 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="0,20 100,20 110,20 118,13 126,20 175,20 192,20 196,3 202,37 208,20 220,20 245,20 260,11 278,11 294,20 400,20 500,20 510,20 518,13 526,20 575,20 592,3 598,37 604,20 616,20 641,20 656,11 674,11 690,20 800,20" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
-            <svg class="hero-ecg-svg" viewBox="0 0 800 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="0,20 100,20 110,20 118,13 126,20 175,20 192,20 196,3 202,37 208,20 220,20 245,20 260,11 278,11 294,20 400,20 500,20 510,20 518,13 526,20 575,20 592,3 598,37 604,20 616,20 641,20 656,11 674,11 690,20 800,20" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-content">
-        <p class="hero-eyebrow">Hi, I'm</p>
-        <h1 class="hero-name">Connor Spinelli</h1>
-        <p class="hero-tagline">Biomedical Engineer&nbsp;|&nbsp;Medical Device Design &amp; Research</p>
-        <p class="hero-sub">
-          Junior at the University of Delaware · Graduating May 2027<br />
-          Focused on medical device design, CAD/fabrication, and biomechanics research.
-        </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
-          <a href="images/resume.pdf" download="Connor_Spinelli_Resume.pdf" class="btn btn-outline">Download Resume</a>
-        </div>
-        <div class="hero-specialties">
-          <span class="hero-spec">Prosthetics &amp; Orthotics</span>
-          <span class="hero-spec">Medical Device Design</span>
-          <span class="hero-spec">EMG Signal Analysis</span>
-          <span class="hero-spec">Robotic Rehabilitation</span>
-        </div>
-      </div>
-
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span>scroll</span>
-        <div class="scroll-arrow"></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-          <div class="about-photo-wrap">
-            <img src="images/headshot.png" alt="Connor Spinelli" class="about-photo" />
-          </div>
-          <div class="about-text">
-            <p>
-              I'm a Biomedical Engineering Honors student at the University of Delaware with a
-              strong foundation in <strong>medical device design, CAD/fabrication, and biomechanics
-              research</strong>. I approach engineering problems through the full design cycle - from
-              concept and 3D modeling to hands-on fabrication and validation - with a focus on
-              devices that address real clinical needs.
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="status-pill"><span class="status-dot" aria-hidden="true"></span>Open to internships &amp; full-time roles</p>
+            <p class="eyebrow">University of Delaware · BS BME '27 · MS Robotics '28</p>
+            <h1 class="hero-title">Biomedical engineer. <em>Devices, robotics, and the tools to build them.</em></h1>
+            <p class="hero-lead">
+              I'm a BME Honors senior on the 4+1 track to an MS in Robotics. I'm a machine shop TA,
+              I spent a year building MRI-compatible hardware for stroke rehab research, and this
+              summer I built AI agent pipelines at Proscia, where I still work part-time.
             </p>
-            <p>
-              I previously worked in the <strong>Human Robotics Lab</strong>, where I performed
-              EMG signal analysis and contributed to robotic rehabilitation research for stroke
-              patients, including the design of MRI-compatible hardware and structural components
-              for the StretchWrist robot. I currently hold a <strong>Machine Shop Teaching
-              Assistant</strong> position and have become fluent in 3D modeling and machining
-              across a range of materials and processes. My coursework spans mechanical design,
-              biomechanics, and computational modeling.
-            </p>
-            <p>
-              I'm pursuing a 4+1 accelerated Master's in Robotics and will graduate with my BS
-              in May 2027. Outside of my education I enjoy skiing, golfing, backpacking and hiking,
-              mixing music, weightlifting, running, traveling, and reading philosophy.
-            </p>
-          </div>
-          <div class="about-stats">
-            <div class="stat-card">
-              <span class="stat-number">3+ Yrs</span>
-              <span class="stat-label">CAD Experience</span>
+            <div class="hero-actions">
+              <a href="#work" class="btn btn-primary">See my work</a>
+              <a href="images/resume.pdf" class="btn btn-ghost" download="Connor_Spinelli_Resume.pdf">Download résumé</a>
             </div>
-            <div class="stat-card">
-              <span class="stat-number">3.6+ GPA</span>
-              <span class="stat-label">Academic Excellence</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">Honors</span>
-              <span class="stat-label">Minoring in Biomechanical Engineering</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">4+1</span>
-              <span class="stat-label">Enrolling in Robotics MS Program</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">4x</span>
-              <span class="stat-label">Dean's List - Academic Recognition</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-number">CITI</span>
-              <span class="stat-label">Certified - Human Subjects Research</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section class="projects-intro" id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Engineering work spanning medical device design, biomechanics research, and computational modeling.</p>
-      </div>
-    </section>
-
-    <!-- PROJECT 1 -->
-    <section class="project-slide" id="project-wrist-catheter">
-      <div class="ps-visual ps-visual--model">
-        <model-viewer
-          src="models/wrist-support.glb"
-          alt="3D model of wrist support structure for catheter insertion"
-          camera-controls
-          auto-rotate
-          auto-rotate-delay="800"
-          rotation-per-second="18deg"
-          environment-image="legacy"
-          shadow-intensity="0.8"
-          shadow-softness="0.5"
-          exposure="1.2"
-          skybox-height="1.5"
-          camera-orbit="45deg 70deg 2.5m"
-          class="ps-model-viewer"
-        ></model-viewer>
-        <p class="ps-model-hint" aria-hidden="true">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-          Drag to rotate
-        </p>
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">01</span>
-          <span class="ps-context">Junior Design</span>
-        </div>
-        <h2 class="ps-title">Wrist Support Structure for Catheter Insertion</h2>
-        <p class="ps-desc">
-          Designed to maintain proper wrist positioning and radial artery catheter securement during medical procedures, this orthotic support aims to reduce complications from catheter dislodgement and ensure consistent pressure readings. Taking the lead on concept generation, prototyping, and engineering design, the project progressed through multiple iterations before converging on a final design CNC machined from Delrin. A custom lathed hinge pin maintains the axis of rotation for the plunger spring pin mechanism, enabling repeatable, reliable positioning across a range of clinical settings.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">SolidWorks</span>
-          <span class="tag">3D Printing Prototypes</span>
-          <span class="tag">Design for Manufacturability</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT 2 -->
-    <section class="project-slide project-slide--flip" id="project-emg">
-      <div class="ps-visual ps-visual--media">
-        <img src="images/emg-analysis-presentation.png" alt="EMG Signal Processing Analysis" class="ps-img">
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">02</span>
-          <span class="ps-context">Research Analysis</span>
-        </div>
-        <h2 class="ps-title">Effects of Pre-Processing Parameters on Stretch Reflex EMG: A Comparative Analysis</h2>
-        <p class="ps-desc">
-          There is no universal standard for surface EMG signal processing in stretch reflex studies, leaving open the question of whether conclusions about long-latency reflex amplitude depend on the chosen filtering pipeline. To address this, eight distinct pre-processing pipelines were applied to recorded subject data and their statistical effects on LLR amplitude systematically compared. The analysis confirmed that our bio signal analysis methodology is reliable; study conclusions are robust and independent of variations in filtering technique, validating the pipeline used across our lab's ongoing research.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">Research</span>
-          <span class="tag">MATLAB</span>
-          <span class="tag">Signal Processing</span>
-          <span class="tag">EMG Analysis</span>
-        </div>
-        <a href="images/emg-analysis-poster.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project →</a>
-      </div>
-    </section>
-
-    <!-- PROJECT 3 -->
-    <section class="project-slide" id="project-mri-support">
-      <div class="ps-visual ps-visual--model">
-        <model-viewer
-          src="models/mri-structure.glb"
-          alt="3D model of MRI robot support structure"
-          camera-controls
-          auto-rotate
-          auto-rotate-delay="800"
-          rotation-per-second="18deg"
-          environment-image="neutral"
-          shadow-intensity="0.35"
-          exposure="0.9"
-          class="ps-model-viewer"
-        ></model-viewer>
-        <p class="ps-model-hint" aria-hidden="true">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"/></svg>
-          Drag to rotate
-        </p>
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">03</span>
-          <span class="ps-context">Research Engineering</span>
-        </div>
-        <h2 class="ps-title">Robot Support Structure for Stroke Patients Participating in MRI StretchWrist Studies</h2>
-        <p class="ps-desc">
-          Designed an MRI-compatible structural mounting system that positions and supports stroke patients' arms inside a high-field MRI bore during robotic wrist perturbation studies. All materials were carefully selected for MRI safety - no ferromagnetic components - while maintaining sufficient stiffness to prevent movement artifacts. The structure integrates with the existing StretchWrist robot and accommodates a range of patient arm sizes and stroke-related mobility constraints.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">SolidWorks</span>
-          <span class="tag">Woodworking</span>
-          <span class="tag">MRI Safety</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT 4 -->
-    <section class="project-slide project-slide--flip" id="project-control-box">
-      <div class="ps-visual ps-visual--media">
-        <img src="images/control-box.png" alt="Robot control box for MRI StretchWrist" class="ps-img">
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">04</span>
-          <span class="ps-context">Research Engineering</span>
-        </div>
-        <h2 class="ps-title">Robot Control Box for MRI StretchWrist Robot</h2>
-        <p class="ps-desc">
-          Engineered the control electronics enclosure for the MRI StretchWrist robotic therapy system, ensuring reliable signal transmission and cable management in a high-field MRI environment. The enclosure organizes control cables, pneumatic lines, and sensor leads while providing RF shielding to prevent image artifacts. Designed for fast setup during experimental sessions and straightforward maintenance by research staff.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">SolidWorks</span>
-          <span class="tag">Laser Cutting</span>
-          <span class="tag">Soldering</span>
-          <span class="tag">RF Shielding</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT 5 -->
-    <section class="project-slide" id="project-tolerancing">
-      <div class="ps-visual ps-visual--media">
-        <img src="images/tolerance-project.png?v=2" alt="Tolerancing project engineering drawings" class="ps-img">
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">05</span>
-          <span class="ps-context">Mechanical Design Course</span>
-        </div>
-        <h2 class="ps-title">Tolerancing Project for Mechanical Design Course</h2>
-        <p class="ps-desc">
-          Applied GD&amp;T principles and statistical tolerancing analysis to a multi-component mechanical assembly, balancing precision requirements against manufacturing cost and feasibility. Worst-case and root-sum-square (RSS) tolerance stack-up analyses were performed to verify that all mating interfaces met fit and function specifications across the full manufacturing variation range. The project produced complete engineering drawings with dimensioned, toleranced geometry per ASME Y14.5 standards.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">Tolerancing</span>
-          <span class="tag">CNC Precision</span>
-          <span class="tag">Engineering Drawing</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT 6 -->
-    <section class="project-slide project-slide--flip" id="project-digoxin">
-      <div class="ps-visual ps-visual--pdf">
-        <iframe src="images/programming-project.pdf" class="ps-pdf-frame" title="Digoxin Compartment Model"></iframe>
-        <button class="ps-pdf-expand" data-pdf="images/programming-project.pdf" data-title="Digoxin Compartment Model" aria-label="Open document full screen">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-          Full Screen
-        </button>
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">06</span>
-          <span class="ps-context">Computational Modeling</span>
-        </div>
-        <h2 class="ps-title">Modeling the Concentration of Digoxin Activity after Intravenous Injection in Three Compartments</h2>
-        <p class="ps-desc">
-          Developed a three-compartment pharmacokinetic model to simulate the distribution, redistribution, and elimination of digoxin following intravenous injection, capturing drug behavior across plasma, peripheral tissues, and a deep tissue compartment. Research was supported by AI workflows, using NotebookLM for literature synthesis and Claude to accelerate MATLAB simulation development, practicing prompt engineering for efficiency, reliability, and scalability. Results clearly illustrate digoxin's narrow therapeutic window and the critical importance of precise dosing in cardiac care.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">MATLAB</span>
-          <span class="tag">ODE Modeling</span>
-          <span class="tag">Claude</span>
-          <span class="tag">Prompt Engineering</span>
-        </div>
-        <a href="images/programming-project.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project →</a>
-      </div>
-    </section>
-
-    <!-- PROJECT 7 -->
-    <section class="project-slide project-slide--flip" id="project-clinical">
-      <div class="ps-visual ps-visual--pdf">
-        <iframe src="images/clinical-presentation.pdf" class="ps-pdf-frame" title="Clinical Biomechanics Presentation"></iframe>
-        <button class="ps-pdf-expand" data-pdf="images/clinical-presentation.pdf" data-title="Backpack Loading Gait Study - Presentation" aria-label="Open presentation full screen">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-          Full Screen
-        </button>
-      </div>
-      <div class="ps-content">
-        <div class="ps-meta">
-          <span class="ps-number">07</span>
-          <span class="ps-context">Clinical Biomechanics Research</span>
-        </div>
-        <h2 class="ps-title">The Impact of Graduated Backpack Loading on Sagittal Plane Kinematics and Joint Kinetics During Gait</h2>
-        <p class="ps-desc">
-          This study examined how progressively increasing backpack loads (0%, 10%, and 20% of body weight) affect sagittal-plane walking mechanics in healthy young adults. Fifteen participants completed overground walking trials while trunk lean, hip angle, and knee angle were tracked using 2D motion capture in Kinovea. Results showed consistent numerical trends across all conditions: trunk forward lean increased from 7.96 degrees at baseline to 12.07 degrees at 20% body weight, hip flexion increased, and knee posture became more extended under heavier loads. Statistical analysis via repeated-measures ANOVA in JMP revealed no significant group-level effect, reflecting the high individual variability in how healthy young adults compensate for added load. The findings suggest that loads approaching 20% body weight produce observable but highly individualized gait adaptations, and that universal safe-load thresholds may not apply across all individuals.
-        </p>
-        <div class="ps-tools">
-          <span class="tag">Kinovea</span>
-          <span class="tag">JMP Statistical Software</span>
-          <span class="tag">Biomechanics</span>
-          <span class="tag">Motion Capture</span>
-          <span class="tag">Repeated-Measures ANOVA</span>
-        </div>
-        <a href="images/clinical-manuscript.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Project →</a>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills-grid">
-
-          <div class="skill-group">
-            <h3 class="skill-group-title">
-              <span class="skill-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              </span>
-              CAD &amp; Fabrication
-            </h3>
-            <ul class="skill-list">
-              <li class="skill-item">SolidWorks</li>
-              <li class="skill-item">AutoCAD / Fusion 360</li>
-              <li class="skill-item">3D Printing</li>
-              <li class="skill-item">CNC Milling &amp; Lathe</li>
-              <li class="skill-item">Laser Cutting</li>
+            <ul class="hero-focus" aria-label="Focus areas">
+              <li>Medical devices</li>
+              <li>Robotics &amp; applied AI</li>
+              <li>Manufacturing &amp; quality</li>
+              <li>Systems</li>
             </ul>
           </div>
 
-          <div class="skill-group">
-            <h3 class="skill-group-title">
-              <span class="skill-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </span>
-              Programming &amp; Analysis
-            </h3>
-            <ul class="skill-list">
-              <li class="skill-item">Python</li>
-              <li class="skill-item">MATLAB</li>
-              <li class="skill-item">Signal Processing</li>
-              <li class="skill-item">JMP Statistical Software</li>
-              <li class="skill-item">ImageJ</li>
+          <figure class="hero-figure">
+            <div class="hero-photo">
+              <img src="images/life/hike.jpg" alt="Connor standing on a rocky ridge above treeline in the White Mountains with a backpack and trekking poles" width="1200" height="1600" fetchpriority="high" />
+            </div>
+            <figcaption class="title-block" aria-label="Drawing title block">
+              <div><span>Part</span>Connor Spinelli</div>
+              <div><span>Dwg no.</span>CS-2027</div>
+              <div><span>Location</span>White Mountains, NH</div>
+              <div><span>Rev</span>F26</div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Process strip -->
+        <div class="container">
+          <ol class="process" aria-label="How I take a design from idea to validated part">
+            <li><span class="process-num">01</span><strong>Define</strong><span>Clinical need, users, constraints</span></li>
+            <li><span class="process-num">02</span><strong>Model</strong><span>SolidWorks, Fusion 360, GD&amp;T</span></li>
+            <li><span class="process-num">03</span><strong>Prototype</strong><span>3D printing, laser cutting</span></li>
+            <li><span class="process-num">04</span><strong>Machine</strong><span>CNC mill &amp; lathe, Delrin, aluminum</span></li>
+            <li><span class="process-num">05</span><strong>Validate</strong><span>Python, MATLAB, DAQ, statistics</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- SELECTED WORK -->
+      <section class="section" id="work">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-label"><span>§01</span> Selected work</p>
+            <h2 class="section-title">What I've been building.</h2>
+          </header>
+
+          <!-- Capstone (in progress) -->
+          <article class="case" id="project-capstone">
+            <div class="case-media case-media--diagram">
+              <svg class="probe-art" viewBox="0 0 480 360" role="img" aria-label="Illustration of a sensing probe with sensor points along its length and a data trace above it">
+                <defs>
+                  <linearGradient id="probe-body" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#4a4038" />
+                    <stop offset=".5" stop-color="#2e2722" />
+                    <stop offset="1" stop-color="#1f1a17" />
+                  </linearGradient>
+                </defs>
+                <g>
+                  <line x1="40" y1="150" x2="440" y2="150" stroke="rgba(242,236,228,.08)" />
+                  <line x1="40" y1="110" x2="440" y2="110" stroke="rgba(242,236,228,.08)" />
+                  <line x1="40" y1="70"  x2="440" y2="70"  stroke="rgba(242,236,228,.08)" />
+                  <path class="probe-line" d="M40 150 C 90 150, 110 146, 140 132 S 200 82, 240 76 S 320 72, 350 90 S 410 140, 440 146" fill="none" stroke="#e0874a" stroke-width="2.5" stroke-linecap="round" />
+                  <path class="probe-line probe-line--2" d="M40 150 C 100 150, 130 140, 160 124 S 220 98, 260 96 S 330 100, 360 116 S 420 146, 440 150" fill="none" stroke="#5fb3a8" stroke-width="2" stroke-linecap="round" />
+                  <text x="40" y="52" class="probe-label">temperature + pressure vs. time</text>
+                </g>
+                <rect x="40" y="226" width="400" height="40" rx="20" fill="url(#probe-body)" stroke="rgba(242,236,228,.18)" />
+                <circle cx="110" cy="246" r="7" fill="#e0874a" />
+                <circle cx="190" cy="246" r="7" fill="#5fb3a8" />
+                <circle cx="270" cy="246" r="7" fill="#e0874a" />
+                <circle cx="350" cy="246" r="7" fill="#5fb3a8" />
+                <g stroke="rgba(242,236,228,.25)" stroke-dasharray="2 4">
+                  <line x1="110" y1="226" x2="110" y2="170" />
+                  <line x1="190" y1="226" x2="190" y2="170" />
+                  <line x1="270" y1="226" x2="270" y2="170" />
+                  <line x1="350" y1="226" x2="350" y2="170" />
+                </g>
+                <line x1="60" y1="300" x2="420" y2="300" stroke="rgba(242,236,228,.3)" stroke-width="1.5" />
+                <polygon points="420,295 432,300 420,305" fill="rgba(242,236,228,.3)" />
+                <text x="60" y="326" class="probe-label">moves through the sponsor's process</text>
+              </svg>
+              <span class="media-badge">In progress · Fall 2026</span>
+            </div>
+            <div class="case-body">
+              <p class="case-meta"><span>Medical device</span><span>Capstone · Sponsored by Terumo Medical</span></p>
+              <h3 class="case-title">Instrumented Sensing Probe</h3>
+              <dl class="case-story">
+                <div>
+                  <dt>The goal</dt>
+                  <dd>Build a probe that measures temperature and pressure at multiple points inside one of the sponsor's manufacturing processes, logs the data, and reports it through a custom GUI.</dd>
+                </div>
+                <div>
+                  <dt>Constraints</dt>
+                  <dd>It has to take measurements without changing the process it's measuring, survive the conditions inside it, and hand the sponsor's engineers data they can use without extra processing.</dd>
+                </div>
+                <div>
+                  <dt>My part</dt>
+                  <dd>I own the team's data acquisition firmware. For my honors contract I'm also building a live monitoring and analysis app on top of it.</dd>
+                </div>
+                <div>
+                  <dt>Team</dt>
+                  <dd>Team 213, a cross-disciplinary group of BME, ECE, and MEEG students that meets with an engineer from the sponsor every week.</dd>
+                </div>
+              </dl>
+              <ul class="tags"><li>Embedded firmware</li><li>Python</li><li>Sensors</li><li>Data acquisition</li></ul>
+            </div>
+          </article>
+
+          <!-- Proscia -->
+          <article class="case case--flip" id="project-proscia">
+            <div class="case-media case-media--readout">
+              <div class="readout">
+                <p class="readout-flow" aria-label="Pipeline: Jira release data, agent stage 1, agent stage 2, cited drafts">
+                  <span>Jira release data</span><i aria-hidden="true"></i><span>Agent stage 1</span><i aria-hidden="true"></i><span>Agent stage 2</span><i aria-hidden="true"></i><span class="is-out">Cited drafts</span>
+                </p>
+                <dl class="readout-grid">
+                  <div><dt>Tests</dt><dd>282</dd></div>
+                  <div><dt>Design controls</dt><dd>37</dd></div>
+                  <div><dt>Agent skills</dt><dd>6</dd></div>
+                  <div><dt>Claims cited</dt><dd>100%</dd></div>
+                </dl>
+              </div>
+              <span class="media-badge">Proscia · Philadelphia</span>
+            </div>
+            <div class="case-body">
+              <p class="case-meta"><span>Applied AI</span><span>Proscia internship · June 2026 to present</span></p>
+              <h3 class="case-title">AI Agent Pipeline for Release Documentation</h3>
+              <dl class="case-story">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>Every product release has to make it from Jira tickets into user guides and release notes, and every claim in those docs has to trace back to its source.</dd>
+                </div>
+                <div>
+                  <dt>What I did</dt>
+                  <dd>Built a two-stage Python agent pipeline (13 scripts, 282 tests, 37 design controls) that drafts user-guide and release-note updates from Jira release data. I packaged 6 reusable agent skills and 2 MCP connectors (Paligo, Jira, Confluence) behind an installer and operator guide, so teammates who aren't engineers can run them.</dd>
+                </div>
+                <div>
+                  <dt>Result</dt>
+                  <dd>Drafts come out with 100% of claims cited. I also launched a 17-page internal AI hub that a scheduled agent audits every week, and brought a 100-page product user guide to Section 508 / WCAG 2.0 AA with zero alt-text failures.</dd>
+                </div>
+              </dl>
+              <ul class="tags"><li>Python</li><li>AI agents</li><li>MCP</li><li>Jira · Confluence · Paligo</li></ul>
+            </div>
+          </article>
+
+          <!-- Wrist support -->
+          <article class="case" id="project-wrist-catheter">
+            <div class="case-media case-media--stage" data-view="model">
+              <model-viewer
+                src="models/wrist-support.glb"
+                poster="images/work/wrist-support.jpg"
+                alt="Interactive 3D model of the wrist support for radial artery catheter insertion"
+                loading="lazy"
+                camera-controls
+                auto-rotate
+                auto-rotate-delay="800"
+                rotation-per-second="18deg"
+                interaction-prompt="none"
+                environment-image="neutral"
+                shadow-intensity="1"
+                shadow-softness="0.8"
+                exposure="1.05"
+                camera-orbit="45deg 68deg auto"
+                field-of-view="24deg"
+              ></model-viewer>
+              <img class="case-annotated" src="images/work/wrist-support.jpg" alt="Annotated render of the wrist support: forearm support, foam padding, Velcro attachment, hinge, hinge pin, plunger spring pin, hand support, and catheter securement hub" loading="lazy" width="960" height="720" />
+              <div class="view-toggle" role="group" aria-label="Choose view">
+                <button type="button" data-set-view="model" aria-pressed="true">3D model</button>
+                <button type="button" data-set-view="annotated" aria-pressed="false">Annotated</button>
+              </div>
+              <span class="media-hint" aria-hidden="true">Drag to rotate</span>
+            </div>
+            <div class="case-body">
+              <p class="case-meta"><span>Medical device</span><span>Junior Design · Spring 2026</span></p>
+              <h3 class="case-title">Wrist Support for Radial Artery Catheter Insertion</h3>
+              <dl class="case-story">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>ICU clinicians need the wrist held at the right extension angle while they place and secure a radial artery catheter. If the wrist moves, the catheter can dislodge and pressure readings become unreliable.</dd>
+                </div>
+                <div>
+                  <dt>What I did</dt>
+                  <dd>With a 5-person BME team, I redesigned an existing support so it could be mass manufactured. I led concept generation and prototyping through several 3D-printed iterations, and we added adjustable wrist extension (a plunger spring pin on a lathe-turned hinge pin) and a catheter securement attachment.</dd>
+                </div>
+                <div>
+                  <dt>Result</dt>
+                  <dd>We carried it through fabrication, and I CNC machined the final parts from Delrin.</dd>
+                </div>
+              </dl>
+              <ul class="tags"><li>SolidWorks</li><li>3D printing</li><li>CNC machining</li><li>DFM</li></ul>
+            </div>
+          </article>
+
+          <!-- MRI support -->
+          <article class="case case--flip" id="project-mri-support">
+            <div class="case-media case-media--stage">
+              <model-viewer
+                src="models/mri-structure.glb"
+                poster="images/work/mri-structure.jpg"
+                alt="Interactive 3D model of the MRI-compatible arm support structure for the StretchWrist robot"
+                loading="lazy"
+                camera-controls
+                auto-rotate
+                auto-rotate-delay="800"
+                rotation-per-second="18deg"
+                interaction-prompt="none"
+                environment-image="neutral"
+                shadow-intensity="0.8"
+                exposure="0.95"
+              ></model-viewer>
+              <span class="media-hint" aria-hidden="true">Drag to rotate</span>
+            </div>
+            <div class="case-body">
+              <p class="case-meta"><span>Rehab robotics</span><span>Human Robotics Lab · Spring 2025</span></p>
+              <h3 class="case-title">MRI-Compatible Support for the StretchWrist Robot</h3>
+              <dl class="case-story">
+                <div>
+                  <dt>Problem</dt>
+                  <dd>The lab's wrist rehab robot runs stroke-patient studies inside an MRI scanner. Patients' arms have to be supported in the bore, and nothing ferromagnetic can go near the magnet.</dd>
+                </div>
+                <div>
+                  <dt>What I did</dt>
+                  <dd>Designed an adjustable support in SolidWorks, sourced non-ferrous materials (brass and plywood), built it, and checked its fit against the scanner bore.</dd>
+                </div>
+                <div>
+                  <dt>Result</dt>
+                  <dd>The adjustability cuts down how much patients have to be maneuvered during setup. I also supported a PhD candidate's stroke-patient trials alongside clinical staff.</dd>
+                </div>
+              </dl>
+              <ul class="tags"><li>SolidWorks</li><li>MRI safety</li><li>Material selection</li><li>Woodworking</li></ul>
+            </div>
+          </article>
+
+          <!-- More hardware -->
+          <h3 class="subhead">More hardware</h3>
+          <div class="cards cards--two">
+            <article class="card" id="project-control-box">
+              <div class="card-media">
+                <img src="images/work/control-box.jpg" alt="Inside the StretchWrist control box: circuit boards, motor drivers, power supplies, and wiring" loading="lazy" width="1088" height="684" />
+              </div>
+              <div class="card-body">
+                <p class="case-meta"><span>Electromechanical</span><span>Human Robotics Lab · Fall 2024</span></p>
+                <h4 class="card-title">A second control box for the MRI robot</h4>
+                <p>I assembled and configured a duplicate of the StretchWrist robot's control box (circuit boards, hardware, motor drivers) and reorganized its wiring. The scanner site now has its own unit, so the sensitive original never has to be transported.</p>
+                <ul class="tags"><li>Soldering</li><li>Motor drivers</li><li>Wiring</li></ul>
+              </div>
+            </article>
+
+            <article class="card" id="project-tolerancing">
+              <div class="card-media">
+                <img src="images/work/tolerancing.jpg" alt="Three machined aluminum blocks with a row of labeled bores, sitting on a wooden bench" loading="lazy" width="1600" height="1307" />
+              </div>
+              <div class="card-body">
+                <p class="case-meta"><span>Manufacturing &amp; quality</span><span>Mechanical Design</span></p>
+                <h4 class="card-title">Tolerance analysis of a multi-part assembly</h4>
+                <p>Ran worst-case and RSS stack-ups on every mating interface, applied GD&amp;T, and produced fully dimensioned drawings to ASME Y14.5, so each fit works across the full range of manufacturing variation.</p>
+                <ul class="tags"><li>GD&amp;T</li><li>ASME Y14.5</li><li>Stack-ups</li></ul>
+              </div>
+            </article>
+          </div>
+
+          <!-- Research -->
+          <h3 class="subhead">Research &amp; analysis</h3>
+          <div class="cards">
+            <article class="card" id="project-emg">
+              <a class="card-media" href="images/emg-analysis-poster.pdf" target="_blank" rel="noopener" data-pdf="images/emg-analysis-poster.pdf" data-title="Stretch Reflex EMG: Pre-Processing Comparison">
+                <img src="images/work/emg.jpg" alt="Connor presenting his EMG research poster at the Delaware INBRE symposium" loading="lazy" width="1600" height="1230" />
+              </a>
+              <div class="card-body">
+                <p class="case-meta"><span>Research</span><span>Delaware INBRE · Summer 2025</span></p>
+                <h4 class="card-title">Does the EMG filter change the result?</h4>
+                <p class="card-sub">Effects of pre-processing parameters on stretch-reflex EMG</p>
+                <p>There's no standard pipeline for surface EMG, so I built a MATLAB tool that ran eight of them on the same stretch-reflex data and tested the effect on significance with mixed models and Tukey HSD. The lab's results held up under every pipeline.</p>
+                <ul class="tags"><li>MATLAB</li><li>Signal processing</li><li>Mixed models</li></ul>
+                <a class="card-link" href="images/emg-analysis-poster.pdf" target="_blank" rel="noopener" data-pdf="images/emg-analysis-poster.pdf" data-title="Stretch Reflex EMG: Pre-Processing Comparison">View poster <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="card" id="project-clinical">
+              <a class="card-media card-media--doc" href="images/clinical-presentation.pdf" target="_blank" rel="noopener" data-pdf="images/clinical-presentation.pdf" data-title="Backpack Loading Gait Study: Presentation">
+                <img src="images/work/clinical-presentation-cover.jpg" alt="Title slide of the backpack loading gait study presentation" loading="lazy" width="1400" height="787" />
+              </a>
+              <div class="card-body">
+                <p class="case-meta"><span>Biomechanics</span><span>Clinical Biomechanics · Team of 4</span></p>
+                <h4 class="card-title">How much backpack is too much?</h4>
+                <p class="card-sub">Graduated loading and sagittal-plane gait kinematics, n = 15</p>
+                <p>Fifteen participants walked carrying 0%, 10%, and 20% of their body weight. Mean trunk lean went from 7.96° to 12.07° at 20%, but people adapted so differently that the group-level effect wasn't significant.</p>
+                <ul class="tags"><li>Kinovea</li><li>JMP</li><li>RM-ANOVA</li></ul>
+                <a class="card-link" href="images/clinical-manuscript.pdf" target="_blank" rel="noopener" data-pdf="images/clinical-manuscript.pdf" data-title="Backpack Loading Gait Study: Manuscript">Read manuscript <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+
+            <article class="card" id="project-digoxin">
+              <a class="card-media card-media--doc card-media--paper" href="images/programming-project.pdf" target="_blank" rel="noopener" data-pdf="images/programming-project.pdf" data-title="Digoxin Three-Compartment Model">
+                <img src="images/work/programming-project-cover.jpg" alt="First page of the digoxin pharmacokinetic modeling report" loading="lazy" width="1082" height="1400" />
+              </a>
+              <div class="card-body">
+                <p class="case-meta"><span>Computational</span><span>Pharmaceutical Modeling · Spring 2026</span></p>
+                <h4 class="card-title">Modeling a narrow therapeutic window</h4>
+                <p class="card-sub">Three-compartment pharmacokinetic model of IV digoxin</p>
+                <p>A MATLAB ODE model of digoxin moving through plasma, peripheral tissue, and deep tissue. I used Claude to speed up the implementation, debug the stiff ODE solver, and pressure-test my modeling assumptions.</p>
+                <ul class="tags"><li>MATLAB</li><li>ODEs</li><li>Claude</li></ul>
+                <a class="card-link" href="images/programming-project.pdf" target="_blank" rel="noopener" data-pdf="images/programming-project.pdf" data-title="Digoxin Three-Compartment Model">Read report <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section section--raised" id="about">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-label"><span>§02</span> About</p>
+            <h2 class="section-title">A bit about me.</h2>
+          </header>
+
+          <div class="about-grid">
+            <figure class="about-photo">
+              <img src="images/work/headshot.jpg" alt="Headshot of Connor Spinelli" loading="lazy" width="1000" height="1249" />
+            </figure>
+            <div class="about-copy">
+              <p>
+                I'm a senior in the University of Delaware's Biomedical Engineering Honors program,
+                minoring in Biomechanical Engineering, and I'll finish a 4+1 <strong>MS in Robotics</strong>
+                in May 2028.
+              </p>
+              <p>
+                I'm a <strong>machine shop TA</strong> in the Spencer Lab Design Studio. I coach 100+
+                students a semester from CAD to finished part on the mills, lathes, laser cutters, and
+                3D printers, and I help with sponsored senior design builds for NASA, Merck, Bloom
+                Energy, and Under Armour. Before that I spent a little over a year in the
+                <strong>Human Robotics Lab</strong> building hardware for an MRI wrist rehab robot and
+                analyzing EMG for stroke research.
+              </p>
+              <p>
+                This summer I joined <strong>Proscia</strong> in Philly as an AI automation intern. It
+                wasn't the design and prototyping work I was mostly looking for, but I got to build
+                with AI every day, which I'm really fascinated by, and they kept me on part-time.
+              </p>
+
+              <blockquote class="pull">
+                <p>Behind every good design is a pile of failed ones somebody learned from.</p>
+              </blockquote>
+
+              <ul class="facts">
+                <li><strong>3.62</strong><span>GPA · Honors</span></li>
+                <li><strong>4×</strong><span>Dean's List</span></li>
+                <li><strong>100+</strong><span>Students coached each semester</span></li>
+                <li><strong>17</strong><span>Countries visited</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-label"><span>§03</span> Experience</p>
+            <h2 class="section-title">Since 2023.</h2>
+          </header>
+
+          <div class="legend" aria-hidden="true">
+            <span class="legend-item" data-type="education">Education</span>
+            <span class="legend-item" data-type="research">Research</span>
+            <span class="legend-item" data-type="work">Work &amp; internships</span>
+            <span class="legend-item" data-type="leadership">Leadership</span>
+          </div>
+
+          <!-- Rendered by script.js from the EXPERIENCE array -->
+          <div class="gantt" id="gantt" aria-hidden="true"></div>
+          <ol class="xp-list" id="xp-list" aria-label="Experience, most recent first"></ol>
+
+          <div class="toolkit">
+            <div class="toolkit-group">
+              <h3>Design &amp; CAD</h3>
+              <ul><li>SolidWorks</li><li>Fusion 360 · AutoCAD</li><li>GD&amp;T · ASME Y14.5</li><li>Tolerance stack-ups</li><li>Design for manufacturing</li></ul>
+            </div>
+            <div class="toolkit-group">
+              <h3>Fabrication</h3>
+              <ul><li>CNC milling &amp; programming</li><li>Manual mill &amp; lathe</li><li>Laser cutting · 3D printing</li><li>Soldering · breadboard circuits</li><li>Woodshop · metal forming</li></ul>
+            </div>
+            <div class="toolkit-group">
+              <h3>Analysis &amp; code</h3>
+              <ul><li>Python</li><li>MATLAB · Simulink</li><li>EMG signal processing</li><li>JMP · mixed-model stats</li><li>ImageJ · Kinovea</li></ul>
+            </div>
+            <div class="toolkit-group">
+              <h3>AI &amp; automation</h3>
+              <ul><li>Agentic engineering</li><li>MCP integrations</li><li>Claude · Claude Cowork</li><li>Jira · Confluence · Paligo</li><li>Section 508 / WCAG remediation</li></ul>
+            </div>
+          </div>
+
+          <details class="certs">
+            <summary>Certifications <span class="certs-count">6</span></summary>
+            <ul class="certs-list">
+              <li><span>MathWorks</span><a href="certificates/matlab-onramp.pdf" target="_blank" rel="noopener">MATLAB Onramp ↗</a></li>
+              <li><span>MathWorks</span><a href="certificates/matlab-simulink-onramp.pdf" target="_blank" rel="noopener">Simulink Onramp ↗</a></li>
+              <li><span>MathWorks</span><a href="certificates/matlab-signal-processing.pdf" target="_blank" rel="noopener">Signal Processing Onramp ↗</a></li>
+              <li><span>CITI Program</span><a href="certificates/human-subjects-protection.pdf" target="_blank" rel="noopener">Human Subjects Protections: Biomedical ↗</a></li>
+              <li><span>CITI Program</span><a href="certificates/responsible-conduct-research.pdf" target="_blank" rel="noopener">Responsible Conduct of Research ↗</a></li>
+              <li><span>CITI Program</span><a href="certificates/good-clinical-practice.pdf" target="_blank" rel="noopener">Good Clinical Practice ↗</a></li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <!-- OFF THE CLOCK -->
+      <section class="section section--raised" id="life">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-label"><span>§04</span> Off the clock</p>
+            <h2 class="section-title">Where I go when I'm not in the shop.</h2>
+          </header>
+
+          <div class="mosaic">
+            <figure class="tile tile--wide">
+              <img src="images/life/ski.jpg" alt="Connor in a ski helmet looking out over a valley and frozen lake at dusk at Mont Tremblant" loading="lazy" width="1600" height="1199" />
+              <figcaption>Mont Tremblant, Quebec</figcaption>
+            </figure>
+            <figure class="tile tile--tall">
+              <img src="images/life/gibraltar.jpg" alt="Connor smiling next to a Barbary macaque perched on a wall above the harbor in Gibraltar" loading="lazy" width="900" height="1600" />
+              <figcaption>Gibraltar</figcaption>
+            </figure>
+            <figure class="tile">
+              <img src="images/life/scuba.jpg" alt="Connor scuba diving over a coral reef in Cozumel" loading="lazy" width="1600" height="1200" />
+              <figcaption>Diving in Cozumel, Mexico</figcaption>
+            </figure>
+            <figure class="tile tile--portrait">
+              <img src="images/life/patriots.jpg" alt="Connor in a Patriots jersey raising a fist in falling snow outside the stadium at night" loading="lazy" width="1200" height="1600" />
+              <figcaption>Patriots game in the snow</figcaption>
+            </figure>
+          </div>
+
+          <div class="life-note">
+            <p>
+              I've been to 17 countries so far. When I'm home I'm usually skiing, golfing, lifting,
+              or DJing.
+            </p>
+            <ul class="hobbies">
+              <li>Skiing</li><li>Golf</li><li>Backpacking</li><li>Scuba</li><li>Running</li><li>Lifting</li><li>DJing &amp; mixing</li><li>Travel</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <p class="section-label"><span>§05</span> Contact</p>
+            <h2 class="contact-title">Hiring for device, robotics, or manufacturing work? <em>Let's talk.</em></h2>
+            <p>
+              I'm looking for internships and full-time roles in medical device R&amp;D, manufacturing
+              and quality, robotics, and systems engineering, and I bring AI automation into all of it. Email is the fastest way to reach me.
+            </p>
+            <a class="contact-email" href="mailto:cspin@udel.edu">cspin@udel.edu</a>
+            <ul class="contact-links">
+              <li><a href="https://linkedin.com/in/connorspinelli" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+              <li><a href="https://github.com/connorspinelli" target="_blank" rel="noopener">GitHub ↗</a></li>
+              <li><a href="images/resume.pdf" download="Connor_Spinelli_Resume.pdf">Résumé ↓</a></li>
             </ul>
           </div>
 
-          <div class="skill-group">
-            <h3 class="skill-group-title">
-              <span class="skill-icon" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </span>
-              AI &amp; Productivity
-            </h3>
-            <ul class="skill-list">
-              <li class="skill-item">AI Prompt Engineering</li>
-              <li class="skill-item">Claude Code</li>
-              <li class="skill-item">Gemini</li>
-              <li class="skill-item">NotebookLM</li>
-              <li class="skill-item">Microsoft Office</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="section section-alt" id="certifications">
-      <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <p class="section-subtitle">Completed coursework and professional certifications in research methods, data analysis, and technical domains.</p>
-        <div class="certs-grid">
-
-          <div class="cert-card">
-            <div class="cert-pdf-wrap">
-              <iframe src="certificates/matlab-onramp.pdf" class="cert-pdf-frame" title="MATLAB Onramp Certificate"></iframe>
-              <button class="ps-pdf-expand" data-pdf="certificates/matlab-onramp.pdf" data-title="MATLAB Onramp" aria-label="Open certificate full screen">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                Full Screen
-              </button>
-            </div>
-            <span class="cert-org">MathWorks</span>
-            <h3 class="cert-name">MATLAB Onramp</h3>
-            <a href="certificates/matlab-onramp.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cert-btn">View Certificate →</a>
-          </div>
-
-          <div class="cert-card">
-            <div class="cert-pdf-wrap">
-              <iframe src="certificates/matlab-simulink-onramp.pdf" class="cert-pdf-frame" title="Simulink Onramp Certificate"></iframe>
-              <button class="ps-pdf-expand" data-pdf="certificates/matlab-simulink-onramp.pdf" data-title="Simulink Onramp" aria-label="Open certificate full screen">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                Full Screen
-              </button>
-            </div>
-            <span class="cert-org">MathWorks</span>
-            <h3 class="cert-name">Simulink Onramp</h3>
-            <a href="certificates/matlab-simulink-onramp.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cert-btn">View Certificate →</a>
-          </div>
-
-          <div class="cert-card">
-            <div class="cert-pdf-wrap">
-              <iframe src="certificates/matlab-signal-processing.pdf" class="cert-pdf-frame" title="Signal Processing Onramp Certificate"></iframe>
-              <button class="ps-pdf-expand" data-pdf="certificates/matlab-signal-processing.pdf" data-title="Signal Processing Onramp" aria-label="Open certificate full screen">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                Full Screen
-              </button>
-            </div>
-            <span class="cert-org">MathWorks</span>
-            <h3 class="cert-name">Signal Processing Onramp</h3>
-            <a href="certificates/matlab-signal-processing.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cert-btn">View Certificate →</a>
-          </div>
-
-          <div class="cert-card">
-            <div class="cert-pdf-wrap">
-              <iframe src="certificates/human-subjects-protection.pdf" class="cert-pdf-frame" title="Human Subjects Protections Certificate"></iframe>
-              <button class="ps-pdf-expand" data-pdf="certificates/human-subjects-protection.pdf" data-title="Human Subjects Protections: Biomedical Research Focus" aria-label="Open certificate full screen">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                Full Screen
-              </button>
-            </div>
-            <span class="cert-org">CITI Program</span>
-            <h3 class="cert-name">Human Subjects Protections: Biomedical Research Focus</h3>
-            <a href="certificates/human-subjects-protection.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cert-btn">View Certificate →</a>
-          </div>
-
-          <div class="cert-card">
-            <div class="cert-pdf-wrap">
-              <iframe src="certificates/responsible-conduct-research.pdf" class="cert-pdf-frame" title="Responsible Conduct of Research Certificate"></iframe>
-              <button class="ps-pdf-expand" data-pdf="certificates/responsible-conduct-research.pdf" data-title="Responsible Conduct of Research" aria-label="Open certificate full screen">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                Full Screen
-              </button>
-            </div>
-            <span class="cert-org">CITI Program</span>
-            <h3 class="cert-name">Responsible Conduct of Research</h3>
-            <a href="certificates/responsible-conduct-research.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cert-btn">View Certificate →</a>
-          </div>
-
-          <div class="cert-card">
-            <div class="cert-pdf-wrap">
-              <iframe src="certificates/good-clinical-practice.pdf" class="cert-pdf-frame" title="Good Clinical Practice Certificate"></iframe>
-              <button class="ps-pdf-expand" data-pdf="certificates/good-clinical-practice.pdf" data-title="Good Clinical Practice" aria-label="Open certificate full screen">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
-                Full Screen
-              </button>
-            </div>
-            <span class="cert-org">CITI Program</span>
-            <h3 class="cert-name">Good Clinical Practice</h3>
-            <a href="certificates/good-clinical-practice.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline cert-btn">View Certificate →</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE / GANTT -->
-    <section class="section section-alt" id="timeline">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <p class="section-subtitle">Education, research, and professional milestones — Aug 2023 to Aug 2026.</p>
-
-        <!-- Legend -->
-        <div class="gantt-legend" aria-hidden="true">
-          <span class="gantt-legend-item gantt-legend--education">Education</span>
-          <span class="gantt-legend-item gantt-legend--research">Research</span>
-          <span class="gantt-legend-item gantt-legend--work">Work / Internship</span>
-          <span class="gantt-legend-item gantt-legend--leadership">Leadership</span>
-        </div>
-
-        <!-- Gantt chart (desktop) -->
-        <div class="gantt" role="img" aria-label="Gantt chart of experience from 2023 to 2026">
-          <!-- Row labels -->
-          <div class="gantt-labels" aria-hidden="true">
-            <div class="gantt-axis-spacer"></div>
-            <div class="gantt-label">BS Biomedical Eng. (Honors), UD</div>
-            <div class="gantt-label">Warehouse Associate, GPS</div>
-            <div class="gantt-label">Research Assistant, HRL</div>
-            <div class="gantt-label">VP, Sigma Pi Iota-Beta</div>
-            <div class="gantt-label">VP Judicial Affairs, IFC</div>
-            <div class="gantt-label">Research Intern, INBRE</div>
-            <div class="gantt-label">Machine Shop TA, Spencer Lab</div>
-            <div class="gantt-label">Biomechanical Engr. Minor</div>
-            <div class="gantt-label">4+1 MS Robotics, UD</div>
-          </div>
-
-          <!-- Chart area -->
-          <div class="gantt-chart">
-            <!-- Axis: year labels on top row, month labels on bottom row -->
-            <!-- Axis spans Aug 2023 (0%) to Aug 2026 (100%) = 36 months            -->
-            <!-- Year markers at Jan 1: 2024=13.889%(mo5), 2025=47.222%(mo17), 2026=80.556%(mo29) -->
-            <div class="gantt-axis">
-              <div class="gantt-axis-years">
-                <span class="gantt-year" style="left:0%">2023</span>
-                <span class="gantt-year" style="left:13.889%">2024</span>
-                <span class="gantt-year" style="left:47.222%">2025</span>
-                <span class="gantt-year" style="left:80.556%">2026</span>
-              </div>
-              <div class="gantt-axis-months">
-                <span class="gantt-month" style="left:0%">Aug</span>
-                <span class="gantt-month" style="left:2.778%">Sep</span>
-                <span class="gantt-month" style="left:5.556%">Oct</span>
-                <span class="gantt-month" style="left:8.333%">Nov</span>
-                <span class="gantt-month" style="left:11.111%">Dec</span>
-                <span class="gantt-month" style="left:13.889%">Jan</span>
-                <span class="gantt-month" style="left:16.667%">Feb</span>
-                <span class="gantt-month" style="left:19.444%">Mar</span>
-                <span class="gantt-month" style="left:22.222%">Apr</span>
-                <span class="gantt-month" style="left:25%">May</span>
-                <span class="gantt-month" style="left:27.778%">Jun</span>
-                <span class="gantt-month" style="left:30.556%">Jul</span>
-                <span class="gantt-month" style="left:33.333%">Aug</span>
-                <span class="gantt-month" style="left:36.111%">Sep</span>
-                <span class="gantt-month" style="left:38.889%">Oct</span>
-                <span class="gantt-month" style="left:41.667%">Nov</span>
-                <span class="gantt-month" style="left:44.444%">Dec</span>
-                <span class="gantt-month" style="left:47.222%">Jan</span>
-                <span class="gantt-month" style="left:50%">Feb</span>
-                <span class="gantt-month" style="left:52.778%">Mar</span>
-                <span class="gantt-month" style="left:55.556%">Apr</span>
-                <span class="gantt-month" style="left:58.333%">May</span>
-                <span class="gantt-month" style="left:61.111%">Jun</span>
-                <span class="gantt-month" style="left:63.889%">Jul</span>
-                <span class="gantt-month" style="left:66.667%">Aug</span>
-                <span class="gantt-month" style="left:69.444%">Sep</span>
-                <span class="gantt-month" style="left:72.222%">Oct</span>
-                <span class="gantt-month" style="left:75%">Nov</span>
-                <span class="gantt-month" style="left:77.778%">Dec</span>
-                <span class="gantt-month" style="left:80.556%">Jan</span>
-                <span class="gantt-month" style="left:83.333%">Feb</span>
-                <span class="gantt-month" style="left:86.111%">Mar</span>
-                <span class="gantt-month" style="left:88.889%">Apr</span>
-                <span class="gantt-month" style="left:91.667%">May</span>
-                <span class="gantt-month" style="left:94.444%">Jun</span>
-                <span class="gantt-month" style="left:97.222%">Jul</span>
-                <span class="gantt-month" style="left:100%">Aug</span>
-              </div>
-            </div>
-
-            <!-- Rows + bars -->
-            <div class="gantt-rows">
-              <!-- Monthly gridlines — dashed; year-start months (Jan) are solid -->
-              <!-- Year lines: 0%(Aug'23 left edge), 13.889%(Jan'24), 47.222%(Jan'25), 80.556%(Jan'26) -->
-              <div class="gantt-grid" aria-hidden="true">
-                <div class="gantt-gridline gantt-gridline--year" style="left:0%"></div>
-                <div class="gantt-gridline" style="left:2.778%"></div>
-                <div class="gantt-gridline" style="left:5.556%"></div>
-                <div class="gantt-gridline" style="left:8.333%"></div>
-                <div class="gantt-gridline" style="left:11.111%"></div>
-                <div class="gantt-gridline gantt-gridline--year" style="left:13.889%"></div>
-                <div class="gantt-gridline" style="left:16.667%"></div>
-                <div class="gantt-gridline" style="left:19.444%"></div>
-                <div class="gantt-gridline" style="left:22.222%"></div>
-                <div class="gantt-gridline" style="left:25%"></div>
-                <div class="gantt-gridline" style="left:27.778%"></div>
-                <div class="gantt-gridline" style="left:30.556%"></div>
-                <div class="gantt-gridline" style="left:33.333%"></div>
-                <div class="gantt-gridline" style="left:36.111%"></div>
-                <div class="gantt-gridline" style="left:38.889%"></div>
-                <div class="gantt-gridline" style="left:41.667%"></div>
-                <div class="gantt-gridline" style="left:44.444%"></div>
-                <div class="gantt-gridline gantt-gridline--year" style="left:47.222%"></div>
-                <div class="gantt-gridline" style="left:50%"></div>
-                <div class="gantt-gridline" style="left:52.778%"></div>
-                <div class="gantt-gridline" style="left:55.556%"></div>
-                <div class="gantt-gridline" style="left:58.333%"></div>
-                <div class="gantt-gridline" style="left:61.111%"></div>
-                <div class="gantt-gridline" style="left:63.889%"></div>
-                <div class="gantt-gridline" style="left:66.667%"></div>
-                <div class="gantt-gridline" style="left:69.444%"></div>
-                <div class="gantt-gridline" style="left:72.222%"></div>
-                <div class="gantt-gridline" style="left:75%"></div>
-                <div class="gantt-gridline" style="left:77.778%"></div>
-                <div class="gantt-gridline gantt-gridline--year" style="left:80.556%"></div>
-                <div class="gantt-gridline" style="left:83.333%"></div>
-                <div class="gantt-gridline" style="left:86.111%"></div>
-                <div class="gantt-gridline" style="left:88.889%"></div>
-                <div class="gantt-gridline" style="left:91.667%"></div>
-                <div class="gantt-gridline" style="left:94.444%"></div>
-                <div class="gantt-gridline" style="left:97.222%"></div>
-                <div class="gantt-gridline" style="left:100%"></div>
-              </div>
-
-              <!-- Today line at May 2026 = month 33/36 = 91.667% -->
-              <div class="gantt-today" style="left:91.667%" aria-hidden="true">
-                <span class="gantt-today-label">Today</span>
-              </div>
-
-              <!-- 1: BS BME — Aug 2023 to May 2026 (0% → 91.667%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--education" style="--bar-left:0%;--bar-width:91.667%" tabindex="0" aria-label="BS Biomedical Engineering, Aug 2023 to present">
-                  <div class="gantt-tooltip">BS Biomedical Engineering (Honors) · Aug 2023 – Present<br>Pursuing an honors degree. Dean's List all four semesters.</div>
-                </div>
-              </div>
-
-              <!-- 2: Warehouse — Jun 2024 to Aug 2024 (27.778% → 33.333%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--work" style="--bar-left:27.778%;--bar-width:5.556%" tabindex="0" aria-label="Warehouse Associate, Jun to Aug 2024">
-                  <div class="gantt-tooltip">Warehouse Associate, GPS · Jun – Aug 2024<br>Managed inventory logistics and warehouse operations.</div>
-                </div>
-              </div>
-
-              <!-- 3: Research Asst — Aug 2024 to Oct 2025 (33.333% → 72.222%, width 38.889%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--research" style="--bar-left:33.333%;--bar-width:38.889%" tabindex="0" aria-label="Research Assistant, Aug 2024 to Oct 2025">
-                  <div class="gantt-tooltip">Research Assistant, Human Robotics Lab · Aug 2024 – Oct 2025<br>EMG signal analysis and MRI-compatible device design for stroke rehab.</div>
-                </div>
-              </div>
-
-              <!-- 4: VP Sigma Pi — Nov 2024 to Nov 2025 (41.667% → 75%, width 33.333%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--leadership" style="--bar-left:41.667%;--bar-width:33.333%" tabindex="0" aria-label="VP Sigma Pi, Nov 2024 to Nov 2025">
-                  <div class="gantt-tooltip">VP, Sigma Pi Iota-Beta · Nov 2024 – Nov 2025<br>Led chapter operations and represented member interests.</div>
-                </div>
-              </div>
-
-              <!-- 5: VP IFC — May 2025 to May 2026 (58.333% → 91.667%, width 33.333%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--leadership" style="--bar-left:58.333%;--bar-width:33.333%" tabindex="0" aria-label="VP Judicial Affairs IFC, May 2025 to present">
-                  <div class="gantt-tooltip">VP Judicial Affairs, IFC · May 2025 – Present<br>Overseeing standards and conduct for the UD Greek community.</div>
-                </div>
-              </div>
-
-              <!-- 6: INBRE — Jun 2025 to Aug 2025 (61.111% → 66.667%, width 5.556%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--research" style="--bar-left:61.111%;--bar-width:5.556%" tabindex="0" aria-label="Research Intern INBRE, Jun to Aug 2025">
-                  <div class="gantt-tooltip">Research Intern, INBRE Program · Jun – Aug 2025<br>Competitive summer internship continuing robotic rehab research.</div>
-                </div>
-              </div>
-
-              <!-- 7: Machine Shop TA — Aug 2025 to May 2026 (66.667% → 91.667%, width 25%) -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--work" style="--bar-left:66.667%;--bar-width:25%" tabindex="0" aria-label="Machine Shop TA, Aug 2025 to present">
-                  <div class="gantt-tooltip">Machine Shop TA, Spencer Lab · Aug 2025 – Present<br>Instruct students in machining, 3D modeling, and fabrication.</div>
-                </div>
-              </div>
-
-              <!-- 8: Biomechanical Minor milestone — Feb 2026 (83.333%) -->
-              <div class="gantt-row">
-                <div class="gantt-diamond-outer" style="--bar-left:83.333%" tabindex="0" aria-label="Biomechanical Engineering Minor declared Feb 2026">
-                  <div class="gantt-diamond-inner"></div>
-                  <div class="gantt-tooltip gantt-tooltip--left">Biomechanical Engineering Minor · Feb 2026<br>Formally declared to complement the BME honors track.</div>
-                </div>
-              </div>
-
-              <!-- 9: MS Robotics upcoming — Aug 2026, dashed marker at right edge -->
-              <div class="gantt-row">
-                <div class="gantt-bar gantt-bar--upcoming" style="--bar-left:97%;--bar-width:3%" tabindex="0" aria-label="4+1 MS Robotics upcoming Aug 2026">
-                  <div class="gantt-tooltip gantt-tooltip--left">4+1 MS Robotics, UD · Aug 2026 (Upcoming)<br>Beginning an accelerated master's program through UD's 4+1 pathway.</div>
-                </div>
-              </div>
-            </div><!-- /.gantt-rows -->
-          </div><!-- /.gantt-chart -->
-        </div><!-- /.gantt -->
-
-        <!-- Mobile fallback list -->
-        <ul class="gantt-mobile">
-          <li class="gantt-mobile-item gantt-mobile--education">
-            <span class="gantt-mobile-date">Aug 2023 – Present</span>
-            <strong>BS Biomedical Engineering (Honors)</strong>
-            <span>University of Delaware</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--work">
-            <span class="gantt-mobile-date">Jun 2024 – Aug 2024</span>
-            <strong>Warehouse Associate</strong>
-            <span>General Plumbing Supply (GPS)</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--research">
-            <span class="gantt-mobile-date">Aug 2024 – Oct 2025</span>
-            <strong>Research Assistant</strong>
-            <span>Human Robotics Lab, UD</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--leadership">
-            <span class="gantt-mobile-date">Nov 2024 – Nov 2025</span>
-            <strong>Vice President</strong>
-            <span>Sigma Pi Iota-Beta Chapter</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--leadership">
-            <span class="gantt-mobile-date">May 2025 – Present</span>
-            <strong>VP of Judicial Affairs</strong>
-            <span>Interfraternity Council (IFC), UD</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--research">
-            <span class="gantt-mobile-date">Jun 2025 – Aug 2025</span>
-            <strong>Research Intern</strong>
-            <span>Human Robotics Lab - Delaware INBRE Program</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--work">
-            <span class="gantt-mobile-date">Aug 2025 – Present</span>
-            <strong>Machine Shop Teaching Assistant</strong>
-            <span>Spencer Lab Design Studio, UD</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--education">
-            <span class="gantt-mobile-date">Feb 2026</span>
-            <strong>Biomechanical Engineering Minor</strong>
-            <span>University of Delaware</span>
-          </li>
-          <li class="gantt-mobile-item gantt-mobile--education">
-            <span class="gantt-mobile-date">Aug 2026 (Upcoming)</span>
-            <strong>MS Robotics — 4+1 Program</strong>
-            <span>University of Delaware</span>
-          </li>
-        </ul>
-
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-    <section class="section section-alt" id="contact">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="section-subtitle">
-          Interested in collaborating, or just want to chat about biomedical engineering?
-          Drop me a message.
-        </p>
-        <div class="contact-wrapper">
           <form class="contact-form" id="contact-form" action="https://formspree.io/f/mykvonkn" method="POST" novalidate>
-            <input type="hidden" name="_replyto" value="cspin@udel.edu">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your@email.com" required />
-              </div>
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
             </div>
-            <div class="form-group">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or question..." required></textarea>
+              <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-            <p class="form-note" id="form-status" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
           </form>
-          <div class="contact-info">
-            <p class="contact-info-label">Or reach me directly</p>
-            <a href="mailto:cspin@udel.edu" class="contact-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-              cspin@udel.edu
-            </a>
-            <a href="https://linkedin.com/in/connorspinelli" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5m0 0a2 2 0 0 1 4 0v5"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://github.com/connorspinelli" target="_blank" rel="noopener noreferrer" class="contact-link">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5 5 0 0 0 20 4.77 4.92 4.92 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A4.92 4.92 0 0 0 5 4.77a5 5 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub
-            </a>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
-      <div class="container">
-        <p>© 2026 Connor Spinelli · Built with HTML, CSS &amp; JavaScript</p>
+      <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Connor Spinelli</p>
+        <p>Built with HTML, CSS &amp; JavaScript · Hosted on GitHub Pages</p>
       </div>
     </footer>
 
-    <!-- PDF LIGHTBOX MODAL -->
-    <div class="pdf-modal" id="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdf-modal-title">
-      <div class="pdf-modal-inner">
-        <div class="pdf-modal-header">
-          <span class="pdf-modal-title" id="pdf-modal-title"></span>
-          <button class="pdf-modal-close" id="pdf-modal-close" aria-label="Close PDF viewer">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-              <path d="M18 6L6 18M6 6l12 12"/>
-            </svg>
-          </button>
+    <!-- PDF viewer -->
+    <dialog class="pdf-modal" id="pdf-modal" aria-labelledby="pdf-modal-title">
+      <div class="pdf-modal-head">
+        <span id="pdf-modal-title"></span>
+        <div>
+          <a id="pdf-modal-open" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>
+          <button type="button" id="pdf-modal-close" aria-label="Close">✕</button>
         </div>
-        <iframe src="" class="pdf-modal-frame" id="pdf-modal-frame" title="PDF Viewer"></iframe>
       </div>
-    </div>
+      <iframe id="pdf-modal-frame" title="Document viewer"></iframe>
+    </dialog>
 
     <script src="script.js"></script>
   </body>

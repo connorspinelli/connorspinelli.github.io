@@ -1,241 +1,279 @@
 /* ============================================================
-   Projects Dropdown
+   Experience data — edit this list to update the timeline.
+   Dates are 'YYYY-MM'. end: null means "present".
+   type: education | research | work | leadership
+   milestone: true draws a diamond at `start` instead of a bar.
    ============================================================ */
-const projectsDropdown = document.getElementById('nav-projects-dropdown');
-const dropdownBtn      = projectsDropdown.querySelector('.nav-dropdown-btn');
+const EXPERIENCE = [
+  { label: 'BS Biomedical Eng. (Honors)', title: 'BS Biomedical Engineering (Honors)', org: 'University of Delaware',
+    type: 'education', start: '2023-08', end: '2027-05', note: "Minor in Biomechanical Engineering · 3.62 GPA · Dean's List 4×" },
+  { label: 'Warehouse Associate, GPS', title: 'Warehouse Associate', org: 'General Plumbing Supply, Piscataway, NJ',
+    type: 'work', start: '2024-06', end: '2024-08', note: 'Picked, packed, and tracked concurrent orders; operated a forklift.' },
+  { label: 'Researcher, Human Robotics Lab', title: 'Assistant Researcher', org: 'Human Robotics Lab, UD',
+    type: 'research', start: '2024-08', end: '2025-10', note: 'MRI-compatible hardware for the StretchWrist robot, EMG analysis, and support for stroke-patient trials.' },
+  { label: 'VP, Sigma Pi Iota-Beta', title: '2nd Counselor / Vice President', org: 'Sigma Pi, Iota-Beta Chapter',
+    type: 'leadership', start: '2024-11', end: '2025-11', note: 'Managed 21 chair positions and their committees; ran weekly chapter meetings.' },
+  { label: 'VP Judicial Affairs, IFC', title: 'VP of Judicial Affairs & Expansion', org: 'Interfraternity Council, UD',
+    type: 'leadership', start: '2025-05', end: null, note: 'Compliance and policy for 29 chapters and 1,800+ members.' },
+  { label: 'INBRE Summer Researcher', title: 'Undergraduate Researcher', org: 'Delaware INBRE Summer Program',
+    type: 'research', start: '2025-06', end: '2025-08', note: 'Built the eight-pipeline EMG comparison tool and presented the poster.' },
+  { label: 'Machine Shop TA, Spencer Lab', title: 'Machine Shop Teaching Assistant', org: 'Design Studio, Spencer Lab, UD',
+    type: 'work', start: '2025-08', end: null, note: 'Coach 100+ students a semester from CAD to finished part; support senior design builds for NASA, Merck, Bloom Energy, and Under Armour.' },
+  { label: 'Biomechanical Eng. Minor', title: 'Biomechanical Engineering Minor', org: 'University of Delaware',
+    type: 'education', start: '2026-02', milestone: true, note: 'Declared alongside the BME honors track.' },
+  { label: 'AI Automation Intern, Proscia', title: 'Technical Content & AI Automation Intern', org: 'Proscia, Philadelphia, PA',
+    type: 'work', start: '2026-06', end: null, note: 'Two-stage Python agent pipeline for release docs, 6 agent skills, 2 MCP connectors. Part-time during the school year.' },
+  { label: 'Capstone, Terumo Medical', title: 'Capstone Design (Team 213)', org: 'Sponsored by Terumo Medical',
+    type: 'education', start: '2026-08', end: '2027-05', note: 'Instrumented sensing probe. I own the DAQ firmware.' },
+  { label: '4+1 MS Robotics', title: 'MS Robotics (4+1 accelerated)', org: 'University of Delaware',
+    type: 'education', start: '2026-08', end: '2028-05', note: 'Graduate coursework alongside the BS, finishing May 2028.' },
+];
 
-dropdownBtn.addEventListener('click', e => {
-  e.stopPropagation();
-  const isOpen = projectsDropdown.hasAttribute('data-open');
-  if (isOpen) {
-    projectsDropdown.removeAttribute('data-open');
-    dropdownBtn.setAttribute('aria-expanded', 'false');
-  } else {
-    projectsDropdown.setAttribute('data-open', '');
-    dropdownBtn.setAttribute('aria-expanded', 'true');
-  }
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', e => {
-  if (!projectsDropdown.contains(e.target)) {
-    projectsDropdown.removeAttribute('data-open');
-    dropdownBtn.setAttribute('aria-expanded', 'false');
-  }
-});
-
-// Close dropdown when a dropdown link is selected (on desktop)
-projectsDropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth > 640) {
-      projectsDropdown.removeAttribute('data-open');
-      dropdownBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
-
-// Close on Escape
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    projectsDropdown.removeAttribute('data-open');
-    dropdownBtn.setAttribute('aria-expanded', 'false');
-  }
-});
+const AXIS_START = '2023-08';
+const AXIS_END   = '2027-08';   // last month shown (inclusive)
 
 /* ============================================================
-   Hamburger / Mobile Nav
+   Date helpers
    ============================================================ */
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('nav-links');
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const parseYM = s => { const [y, m] = s.split('-').map(Number); return { y, m }; };
+const monthIdx = s => { const a = parseYM(AXIS_START), b = parseYM(s); return (b.y - a.y) * 12 + (b.m - a.m); };
+const fmt = s => { const { y, m } = parseYM(s); return `${MONTHS[m - 1]} ${y}`; };
 
-hamburger.addEventListener('click', () => {
-  const open = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!open));
-  navLinks.classList.toggle('open', !open);
-});
+const now = new Date();
+const todayYM = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+const todayPos = monthIdx(todayYM) + (now.getDate() - 1) / daysInMonth;   // in months
+const TOTAL = monthIdx(AXIS_END) + 1;
+const pct = months => `${(Math.max(0, Math.min(months, TOTAL)) / TOTAL) * 100}%`;
 
-// Close mobile menu when a non-dropdown nav link is clicked
-navLinks.querySelectorAll('a:not(.dropdown-menu a)').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.setAttribute('aria-expanded', 'false');
-    navLinks.classList.remove('open');
-  });
-});
-
-// Close mobile menu on outside click
-document.addEventListener('click', e => {
-  if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-    hamburger.setAttribute('aria-expanded', 'false');
-    navLinks.classList.remove('open');
-  }
-});
-
-/* ============================================================
-   Navbar scroll shadow
-   ============================================================ */
-const navbar = document.getElementById('navbar');
-
-const onScroll = () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
+const dateRange = e => {
+  if (e.milestone) return fmt(e.start);
+  if (!e.end) return `${fmt(e.start)} to present`;
+  const future = monthIdx(e.end) + 1 > todayPos;
+  return `${fmt(e.start)} to ${fmt(e.end)}${future ? ' (expected)' : ''}`;
 };
 
+/* ============================================================
+   Gantt chart
+   ============================================================ */
+function renderGantt() {
+  const root = document.getElementById('gantt');
+  if (!root) return;
+
+  const axis = [];
+  for (let i = 0; i < TOTAL; i++) {
+    const { y, m } = parseYM(AXIS_START);
+    const d = new Date(y, m - 1 + i, 1);
+    const left = pct(i + 0.5);
+    if (d.getMonth() === 0 || i === 0) axis.push(`<span class="g-year" style="left:${pct(i)}">${d.getFullYear()}</span>`);
+    if (i % 2 === 0) axis.push(`<span class="g-month" style="left:${left}">${MONTHS[d.getMonth()]}</span>`);
+  }
+
+  const grid = [];
+  for (let i = 0; i <= TOTAL; i++) {
+    const { m } = parseYM(AXIS_START);
+    const isYear = (m - 1 + i) % 12 === 0;
+    grid.push(`<div class="g-gridline${isYear ? ' g-gridline--year' : ''}" style="left:${pct(i)}"></div>`);
+  }
+
+  const rows = EXPERIENCE.map((e, i) => {
+    const s = monthIdx(e.start);
+    let marks;
+    if (e.milestone) {
+      marks = `<div class="g-milestone" data-i="${i}" style="--l:${pct(s + 0.5)}"></div>`;
+    } else {
+      const end = e.end ? monthIdx(e.end) + 1 : todayPos;
+      const split = Math.min(Math.max(todayPos, s), end);
+      marks = '';
+      if (split > s) marks += `<div class="g-bar${e.todo ? ' g-bar--todo' : ''}" data-i="${i}" style="--l:${pct(s)};--w:calc(${pct(split)} - ${pct(s)})"></div>`;
+      if (end > split) marks += `<div class="g-bar g-bar--future" data-i="${i}" style="--l:${pct(split)};--w:calc(${pct(end)} - ${pct(split)})"></div>`;
+    }
+    return `<div class="g-row" data-type="${e.type}"><div class="g-label" title="${e.title}">${e.label}</div><div class="g-track">${marks}</div></div>`;
+  }).join('');
+
+  root.innerHTML = `
+    <div class="g-row g-axis"><div></div><div class="g-track">${axis.join('')}</div></div>
+    <div class="g-body">
+      <div class="g-grid">${grid.join('')}
+        <div class="g-today" style="left:${pct(todayPos)}"><span>Today</span></div>
+      </div>
+      ${rows}
+    </div>
+    <div class="g-tip" role="tooltip"></div>`;
+
+  // Shared tooltip
+  const tip = root.querySelector('.g-tip');
+  root.querySelectorAll('[data-i]').forEach(el => {
+    const show = () => {
+      const e = EXPERIENCE[+el.dataset.i];
+      tip.innerHTML = `<em>${dateRange(e)}</em><strong>${e.title}</strong>${e.org}<br>${e.note || ''}`;
+      const r = el.getBoundingClientRect(), box = root.getBoundingClientRect();
+      tip.classList.add('is-visible');
+      const tw = tip.offsetWidth;
+      let x = r.left - box.left + r.width / 2 - tw / 2;
+      x = Math.max(8, Math.min(x, box.width - tw - 8));
+      tip.style.left = `${x}px`;
+      tip.style.top = `${r.bottom - box.top + 8}px`;
+    };
+    el.addEventListener('mouseenter', show);
+    el.addEventListener('mouseleave', () => tip.classList.remove('is-visible'));
+  });
+}
+
+/* ============================================================
+   Experience list (readable on every screen size)
+   ============================================================ */
+function renderXpList() {
+  const list = document.getElementById('xp-list');
+  if (!list) return;
+  const sorted = [...EXPERIENCE].sort((a, b) => b.start.localeCompare(a.start));
+  list.innerHTML = sorted.map(e => `
+    <li class="xp-item${e.todo ? ' xp-item--todo' : ''}" data-type="${e.type}">
+      <div>
+        <span class="xp-date">${dateRange(e)}</span>
+        <span class="xp-title">${e.title}</span>
+        <span class="xp-org">${e.org}</span>
+        ${e.note ? `<p class="xp-note">${e.note}</p>` : ''}
+      </div>
+    </li>`).join('');
+}
+
+renderGantt();
+renderXpList();
+
+/* ============================================================
+   Nav: scrolled state, mobile menu, active section
+   ============================================================ */
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 12);
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
-/* ============================================================
-   Active nav link highlighting via IntersectionObserver
-   ============================================================ */
-const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
+const setMenu = open => {
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  navLinks.classList.toggle('is-open', open);
+};
+navToggle.addEventListener('click', () => setMenu(navToggle.getAttribute('aria-expanded') !== 'true'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
+const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.getAttribute('id');
-      navAnchors.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
-      });
-    }
+    if (!entry.isIntersecting) return;
+    navAnchors.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === `#${entry.target.id}`));
   });
-}, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
-
-sections.forEach(s => sectionObserver.observe(s));
+}, { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main > section[id]').forEach(s => sectionObserver.observe(s));
 
 /* ============================================================
-   Scroll-reveal animation
+   Scroll reveal
    ============================================================ */
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+      entry.target.classList.add('is-in');
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll(
-  '.ps-content, .stat-card, .skill-group, .about-text p'
-).forEach((el, i) => {
-  el.style.setProperty('--delay', `${i * 60}ms`);
-  el.classList.add('reveal');
-  revealObserver.observe(el);
+const revealGroups = [
+  '.section-head', '.case', '.cards .card', '.about-photo', '.about-copy',
+  '.gantt', '.toolkit-group', '.mosaic .tile', '.life-note', '.contact-copy', '.contact-form', '.process li'
+];
+revealGroups.forEach(sel => {
+  document.querySelectorAll(sel).forEach((el, i) => {
+    el.classList.add('reveal');
+    el.style.setProperty('--d', `${(i % 5) * 70}ms`);
+    revealObserver.observe(el);
+  });
+});
+
+/* ============================================================
+   3D viewers — hide hint after first interaction
+   ============================================================ */
+document.querySelectorAll('model-viewer').forEach(viewer => {
+  const hint = viewer.parentElement.querySelector('.media-hint');
+  if (!hint) return;
+  viewer.addEventListener('camera-change', e => {
+    if (e.detail.source === 'user-interaction') hint.classList.add('is-hidden');
+  });
+});
+
+/* ============================================================
+   Wrist support: 3D model / annotated toggle
+   ============================================================ */
+document.querySelectorAll('[data-set-view]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const media = btn.closest('.case-media');
+    media.dataset.view = btn.dataset.setView;
+    media.querySelectorAll('[data-set-view]').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+  });
+});
+
+/* ============================================================
+   PDF modal (desktop); phones just open the PDF in a new tab
+   ============================================================ */
+const modal = document.getElementById('pdf-modal');
+const modalFrame = document.getElementById('pdf-modal-frame');
+const modalTitle = document.getElementById('pdf-modal-title');
+const modalOpen = document.getElementById('pdf-modal-open');
+
+document.querySelectorAll('[data-pdf]').forEach(link => {
+  link.addEventListener('click', e => {
+    if (window.innerWidth < 860 || typeof modal.showModal !== 'function') return;
+    e.preventDefault();
+    modalFrame.src = link.dataset.pdf;
+    modalOpen.href = link.dataset.pdf;
+    modalTitle.textContent = link.dataset.title || 'Document';
+    modal.showModal();
+    document.body.style.overflow = 'hidden';
+  });
+});
+const closeModal = () => modal.close();
+document.getElementById('pdf-modal-close').addEventListener('click', closeModal);
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+modal.addEventListener('close', () => {
+  document.body.style.overflow = '';
+  setTimeout(() => { modalFrame.src = 'about:blank'; }, 150);
 });
 
 /* ============================================================
    Contact form — Formspree
    ============================================================ */
-const form       = document.getElementById('contact-form');
+const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
+const setStatus = (msg, type) => { formStatus.textContent = msg; formStatus.className = `form-status ${type}`; };
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-
-  const name    = form.name.value.trim();
-  const email   = form.email.value.trim();
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
   const message = form.message.value.trim();
 
-  if (!name || !email || !message) {
-    setStatus('Please fill in all fields.', 'error');
-    return;
-  }
+  if (!name || !email || !message) return setStatus('Please fill in all fields.', 'error');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return setStatus('Please enter a valid email address.', 'error');
 
-  if (!isValidEmail(email)) {
-    setStatus('Please enter a valid email address.', 'error');
-    return;
-  }
-
-  const submitBtn = form.querySelector('button[type="submit"]');
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
-
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
   try {
-    const response = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { Accept: 'application/json' }
-    });
-
-    if (response.ok) {
-      setStatus("Message sent! I'll get back to you soon.", 'success');
-      form.reset();
-    } else {
-      setStatus('Something went wrong. Please email me directly at cspin@udel.edu.', 'error');
-    }
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (!res.ok) throw new Error();
+    setStatus("Thanks! I'll get back to you soon.", 'success');
+    form.reset();
   } catch {
     setStatus('Something went wrong. Please email me directly at cspin@udel.edu.', 'error');
   } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Send Message';
+    btn.disabled = false;
+    btn.textContent = 'Send message';
   }
 });
 
-function setStatus(msg, type) {
-  formStatus.textContent = msg;
-  formStatus.className   = `form-note ${type}`;
-}
-
-function isValidEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-/* ============================================================
-   3D Model Viewer — dismiss hint on first interaction
-   ============================================================ */
-document.querySelectorAll('model-viewer').forEach(viewer => {
-  const hint = viewer.closest('.ps-visual').querySelector('.ps-model-hint');
-  if (!hint) return;
-  viewer.addEventListener('camera-change', () => {
-    hint.classList.add('hidden');
-  }, { once: true });
-});
-
-/* ============================================================
-   PDF Lightbox Modal
-   ============================================================ */
-const pdfModal      = document.getElementById('pdf-modal');
-const pdfModalFrame = document.getElementById('pdf-modal-frame');
-const pdfModalClose = document.getElementById('pdf-modal-close');
-const pdfModalTitle = document.getElementById('pdf-modal-title');
-
-document.querySelectorAll('.ps-pdf-expand').forEach(btn => {
-  btn.addEventListener('click', () => {
-    pdfModalFrame.src = btn.dataset.pdf;
-    pdfModalTitle.textContent = btn.dataset.title || 'Document';
-    pdfModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
-});
-
-pdfModalClose.addEventListener('click', closePdfModal);
-
-pdfModal.addEventListener('click', e => {
-  if (e.target === pdfModal) closePdfModal();
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && pdfModal.classList.contains('open')) closePdfModal();
-});
-
-function closePdfModal() {
-  pdfModal.classList.remove('open');
-  document.body.style.overflow = '';
-  setTimeout(() => { pdfModalFrame.src = ''; }, 200);
-}
-
-/* ============================================================
-   Inject reveal keyframes at runtime (avoids extra CSS parse)
-   ============================================================ */
-const style = document.createElement('style');
-style.textContent = `
-  .reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.55s var(--delay, 0ms) ease,
-                transform 0.55s var(--delay, 0ms) ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
-`;
-document.head.appendChild(style);
+document.getElementById('year').textContent = new Date().getFullYear();
