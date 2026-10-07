@@ -6,23 +6,23 @@
    ============================================================ */
 const EXPERIENCE = [
   { label: 'BS Biomedical Eng. (Honors)', title: 'BS Biomedical Engineering (Honors)', org: 'University of Delaware',
-    type: 'education', start: '2023-08', end: '2027-05', note: 'Minor in Biomechanical Engineering' },
+    type: 'education', start: '2023-08', end: '2027-05', note: 'Honors program' },
   { label: 'Warehouse Associate', title: 'Warehouse Associate', org: 'General Plumbing Supply',
     type: 'work', start: '2024-06', end: '2024-08', inList: false },
   { label: 'Human Robotics Lab', title: 'Assistant Researcher', org: 'Human Robotics Lab, UD',
-    type: 'research', start: '2024-08', end: '2025-10', note: 'MRI-compatible robot hardware and EMG analysis for stroke rehab studies.' },
+    type: 'research', start: '2024-08', end: '2025-10', projects: [['MRI support', 'project-mri-support'], ['Control box', 'project-control-box']] },
   { label: 'VP, Sigma Pi', title: 'Vice President', org: 'Sigma Pi, Iota-Beta Chapter',
     type: 'leadership', start: '2024-11', end: '2025-11', note: 'Managed 21 chair positions and their committees.' },
   { label: 'VP Judicial Affairs, IFC', title: 'VP of Judicial Affairs & Expansion', org: 'Interfraternity Council, UD',
     type: 'leadership', start: '2025-05', end: null, note: 'Compliance and policy for 29 chapters, 1,800+ members.' },
   { label: 'INBRE Summer Research', title: 'Undergraduate Researcher', org: 'Delaware INBRE',
-    type: 'research', start: '2025-06', end: '2025-08', note: 'EMG pipeline comparison, presented as a poster.' },
+    type: 'research', start: '2025-06', end: '2025-08', projects: [['EMG comparison', 'project-emg']] },
   { label: 'Machine Shop TA', title: 'Machine Shop Teaching Assistant', org: 'Spencer Lab Design Studio, UD',
     type: 'work', start: '2025-08', end: null, note: '100+ students a semester; senior design builds for NASA, Merck, Bloom Energy, Under Armour.' },
   { label: 'Biomechanical Eng. Minor', title: 'Biomechanical Engineering Minor', org: 'University of Delaware',
     type: 'education', start: '2026-02', milestone: true, inList: false },
   { label: 'Proscia', title: 'AI Automation Intern', org: 'Proscia, Philadelphia',
-    type: 'work', start: '2026-06', end: null, note: 'Agent pipelines and MCP connectors for the content team. Part-time during the school year.' },
+    type: 'work', start: '2026-06', end: null, note: 'Part-time during the school year.', projects: [['AI agent pipeline', 'project-proscia']] },
   { label: 'Capstone, Terumo Medical', title: 'Capstone Design', org: 'Sponsored by Terumo Medical',
     type: 'education', start: '2026-08', end: '2027-05', inList: false },
   { label: '4+1 MS Robotics', title: 'MS Robotics (4+1)', org: 'University of Delaware',
@@ -135,6 +135,7 @@ function renderXpList() {
         <span class="xp-title">${e.title}</span>
         <span class="xp-org">${e.org}</span>
         ${e.note ? `<p class="xp-note">${e.note}</p>` : ''}
+        ${e.projects ? `<p class="xp-links">${e.projects.map(([t, id]) => `<a href="#${id}">${t} ↑</a>`).join('')}</p>` : ''}
       </div>
     </li>`).join('');
 }

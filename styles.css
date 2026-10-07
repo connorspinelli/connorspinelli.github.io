@@ -560,26 +560,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
 .about-copy p + p { margin-top: 1.1rem; }
 .about-copy strong { color: var(--text); font-weight: 600; }
 
-.facts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 2.25rem;
-  border-top: 1px solid var(--line);
-}
-.facts li {
-  padding: 1.1rem 1rem 0 0;
-  display: flex;
-  flex-direction: column;
-}
-.facts strong {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 1.9rem;
-  color: var(--copper-hi);
-  line-height: 1.1;
-}
-.facts span { font-size: .82rem; color: var(--text-dim); }
-
 /* ============================================================
    Experience — Gantt + list
    ============================================================ */
@@ -1112,7 +1092,6 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
 @media (max-width: 640px) {
   body { font-size: 1rem; }
   .cards { grid-template-columns: 1fr; }
-  .facts { grid-template-columns: repeat(2, 1fr); row-gap: 1rem; }
   .case-story div { grid-template-columns: 1fr; gap: .2rem; }
   .case-story dt { padding-top: 0; }
   .certs-list { grid-template-columns: 1fr; }
@@ -1329,3 +1308,12 @@ html:not(.js) .probe-line { animation: draw 2.4s var(--ease) .3s forwards; }
   line-height: 1.1;
   color: var(--teal);
 }
+
+.xp-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin-top: .3rem; }
+.xp-links a {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--copper-hi);
+  padding: .2rem 0;
+}
+.xp-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
