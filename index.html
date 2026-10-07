@@ -45,9 +45,9 @@
           <span class="nav-brand-mark" aria-hidden="true"></span>Connor Spinelli
         </a>
         <nav class="nav-links" id="nav-links" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
+          <a href="#work">Projects</a>
           <a href="#experience">Experience</a>
+          <a href="#about">About</a>
           <a href="#life">Off the Clock</a>
           <a href="#contact">Contact</a>
           <a href="images/resume.pdf" class="nav-cta" download="Connor_Spinelli_Resume.pdf">Résumé <span aria-hidden="true">↓</span></a>
@@ -69,54 +69,26 @@
             <p class="eyebrow">University of Delaware · BS BME '27 · MS Robotics '28</p>
             <h1 class="hero-title">Biomedical engineer. <em>Devices, robotics, and the tools to build them.</em></h1>
             <p class="hero-lead">
-              I'm a BME Honors senior on the 4+1 track to an MS in Robotics. I'm a machine shop TA,
-              I spent a year building MRI-compatible hardware for stroke rehab research, and this
-              summer I built AI agent pipelines at Proscia, where I still work part-time.
+              Machine shop TA, former rehab robotics researcher, and AI automation intern at Proscia.
             </p>
             <div class="hero-actions">
-              <a href="#work" class="btn btn-primary">See my work</a>
+              <a href="#work" class="btn btn-primary">See my projects</a>
               <a href="images/resume.pdf" class="btn btn-ghost" download="Connor_Spinelli_Resume.pdf">Download résumé</a>
             </div>
-            <ul class="hero-focus" aria-label="Focus areas">
-              <li>Medical devices</li>
-              <li>Robotics &amp; applied AI</li>
-              <li>Manufacturing &amp; quality</li>
-              <li>Systems</li>
-            </ul>
           </div>
 
           <figure class="hero-figure">
             <div class="hero-photo">
               <img src="images/life/hike.jpg" alt="Connor standing on a rocky ridge above treeline in the White Mountains with a backpack and trekking poles" width="1200" height="1600" fetchpriority="high" />
             </div>
-            <figcaption class="title-block" aria-label="Drawing title block">
-              <div><span>Part</span>Connor Spinelli</div>
-              <div><span>Dwg no.</span>CS-2027</div>
-              <div><span>Location</span>White Mountains, NH</div>
-              <div><span>Rev</span>F26</div>
-            </figcaption>
           </figure>
-        </div>
-
-        <!-- Process strip -->
-        <div class="container">
-          <ol class="process" aria-label="How I take a design from idea to validated part">
-            <li><span class="process-num">01</span><strong>Define</strong><span>Clinical need, users, constraints</span></li>
-            <li><span class="process-num">02</span><strong>Model</strong><span>SolidWorks, Fusion 360, GD&amp;T</span></li>
-            <li><span class="process-num">03</span><strong>Prototype</strong><span>3D printing, laser cutting</span></li>
-            <li><span class="process-num">04</span><strong>Machine</strong><span>CNC mill &amp; lathe, Delrin, aluminum</span></li>
-            <li><span class="process-num">05</span><strong>Validate</strong><span>Python, MATLAB, DAQ, statistics</span></li>
-          </ol>
         </div>
       </section>
 
-      <!-- SELECTED WORK -->
+      <!-- PROJECTS -->
       <section class="section" id="work">
         <div class="container">
-          <header class="section-head">
-            <p class="section-label"><span>§01</span> Selected work</p>
-            <h2 class="section-title">What I've been building.</h2>
-          </header>
+          <h2 class="section-title">Projects</h2>
 
           <!-- Capstone (in progress) -->
           <article class="case" id="project-capstone">
@@ -135,7 +107,6 @@
                   <line x1="40" y1="70"  x2="440" y2="70"  stroke="rgba(242,236,228,.08)" />
                   <path class="probe-line" d="M40 150 C 90 150, 110 146, 140 132 S 200 82, 240 76 S 320 72, 350 90 S 410 140, 440 146" fill="none" stroke="#e0874a" stroke-width="2.5" stroke-linecap="round" />
                   <path class="probe-line probe-line--2" d="M40 150 C 100 150, 130 140, 160 124 S 220 98, 260 96 S 330 100, 360 116 S 420 146, 440 150" fill="none" stroke="#5fb3a8" stroke-width="2" stroke-linecap="round" />
-                  <text x="40" y="52" class="probe-label">temperature + pressure vs. time</text>
                 </g>
                 <rect x="40" y="226" width="400" height="40" rx="20" fill="url(#probe-body)" stroke="rgba(242,236,228,.18)" />
                 <circle cx="110" cy="246" r="7" fill="#e0874a" />
@@ -148,71 +119,56 @@
                   <line x1="270" y1="226" x2="270" y2="170" />
                   <line x1="350" y1="226" x2="350" y2="170" />
                 </g>
-                <line x1="60" y1="300" x2="420" y2="300" stroke="rgba(242,236,228,.3)" stroke-width="1.5" />
-                <polygon points="420,295 432,300 420,305" fill="rgba(242,236,228,.3)" />
-                <text x="60" y="326" class="probe-label">moves through the sponsor's process</text>
               </svg>
-              <span class="media-badge">In progress · Fall 2026</span>
+              <span class="media-badge">In progress</span>
             </div>
             <div class="case-body">
-              <p class="case-meta"><span>Medical device</span><span>Capstone · Sponsored by Terumo Medical</span></p>
+              <p class="case-meta"><span>Capstone · Terumo Medical</span><span>Fall 2026</span></p>
               <h3 class="case-title">Instrumented Sensing Probe</h3>
               <dl class="case-story">
                 <div>
-                  <dt>The goal</dt>
-                  <dd>Build a probe that measures temperature and pressure at multiple points inside one of the sponsor's manufacturing processes, logs the data, and reports it through a custom GUI.</dd>
+                  <dt>Goal</dt>
+                  <dd>Measure temperature and pressure at multiple points inside a sponsor manufacturing process, log the data, and report it through a custom GUI.</dd>
                 </div>
                 <div>
                   <dt>Constraints</dt>
-                  <dd>It has to take measurements without changing the process it's measuring, survive the conditions inside it, and hand the sponsor's engineers data they can use without extra processing.</dd>
+                  <dd>Measure without disturbing the process, survive its conditions, and deliver data the sponsor can use as is.</dd>
                 </div>
                 <div>
-                  <dt>My part</dt>
-                  <dd>I own the team's data acquisition firmware. For my honors contract I'm also building a live monitoring and analysis app on top of it.</dd>
-                </div>
-                <div>
-                  <dt>Team</dt>
-                  <dd>Team 213, a cross-disciplinary group of BME, ECE, and MEEG students that meets with an engineer from the sponsor every week.</dd>
+                  <dt>My role</dt>
+                  <dd>I own the data acquisition firmware and, for my honors contract, a live monitoring app. Team of BME, ECE, and MEEG students.</dd>
                 </div>
               </dl>
-              <ul class="tags"><li>Embedded firmware</li><li>Python</li><li>Sensors</li><li>Data acquisition</li></ul>
             </div>
           </article>
 
           <!-- Proscia -->
           <article class="case case--flip" id="project-proscia">
             <div class="case-media case-media--readout">
-              <div class="readout">
-                <p class="readout-flow" aria-label="Pipeline: Jira release data, agent stage 1, agent stage 2, cited drafts">
-                  <span>Jira release data</span><i aria-hidden="true"></i><span>Agent stage 1</span><i aria-hidden="true"></i><span>Agent stage 2</span><i aria-hidden="true"></i><span class="is-out">Cited drafts</span>
-                </p>
-                <dl class="readout-grid">
-                  <div><dt>Tests</dt><dd>282</dd></div>
-                  <div><dt>Design controls</dt><dd>37</dd></div>
-                  <div><dt>Agent skills</dt><dd>6</dd></div>
-                  <div><dt>Claims cited</dt><dd>100%</dd></div>
-                </dl>
-              </div>
-              <span class="media-badge">Proscia · Philadelphia</span>
+              <dl class="readout-grid">
+                <div><dt>Tests</dt><dd>282</dd></div>
+                <div><dt>Design controls</dt><dd>37</dd></div>
+                <div><dt>Agent skills</dt><dd>6</dd></div>
+                <div><dt>Claims cited</dt><dd>100%</dd></div>
+              </dl>
             </div>
             <div class="case-body">
-              <p class="case-meta"><span>Applied AI</span><span>Proscia internship · June 2026 to present</span></p>
-              <h3 class="case-title">AI Agent Pipeline for Release Documentation</h3>
+              <p class="case-meta"><span>Proscia internship</span><span>Summer 2026 to present</span></p>
+              <h3 class="case-title">AI Agent Pipeline for Release Docs</h3>
               <dl class="case-story">
                 <div>
                   <dt>Problem</dt>
-                  <dd>Every product release has to make it from Jira tickets into user guides and release notes, and every claim in those docs has to trace back to its source.</dd>
+                  <dd>Each release has to go from Jira tickets to user guides and release notes, with every claim traceable to its source.</dd>
                 </div>
                 <div>
                   <dt>What I did</dt>
-                  <dd>Built a two-stage Python agent pipeline (13 scripts, 282 tests, 37 design controls) that drafts user-guide and release-note updates from Jira release data. I packaged 6 reusable agent skills and 2 MCP connectors (Paligo, Jira, Confluence) behind an installer and operator guide, so teammates who aren't engineers can run them.</dd>
+                  <dd>Built a two-stage Python agent pipeline, then packaged it as 6 agent skills and 2 MCP connectors that non-engineers can install and run.</dd>
                 </div>
                 <div>
                   <dt>Result</dt>
-                  <dd>Drafts come out with 100% of claims cited. I also launched a 17-page internal AI hub that a scheduled agent audits every week, and brought a 100-page product user guide to Section 508 / WCAG 2.0 AA with zero alt-text failures.</dd>
+                  <dd>Drafts come out with every claim cited. I also brought a 100-page user guide to Section 508 compliance.</dd>
                 </div>
               </dl>
-              <ul class="tags"><li>Python</li><li>AI agents</li><li>MCP</li><li>Jira · Confluence · Paligo</li></ul>
             </div>
           </article>
 
@@ -238,29 +194,27 @@
               ></model-viewer>
               <img class="case-annotated" src="images/work/wrist-support.jpg" alt="Annotated render of the wrist support: forearm support, foam padding, Velcro attachment, hinge, hinge pin, plunger spring pin, hand support, and catheter securement hub" loading="lazy" width="960" height="720" />
               <div class="view-toggle" role="group" aria-label="Choose view">
-                <button type="button" data-set-view="model" aria-pressed="true">3D model</button>
+                <button type="button" data-set-view="model" aria-pressed="true">3D</button>
                 <button type="button" data-set-view="annotated" aria-pressed="false">Annotated</button>
               </div>
-              <span class="media-hint" aria-hidden="true">Drag to rotate</span>
             </div>
             <div class="case-body">
-              <p class="case-meta"><span>Medical device</span><span>Junior Design · Spring 2026</span></p>
-              <h3 class="case-title">Wrist Support for Radial Artery Catheter Insertion</h3>
+              <p class="case-meta"><span>Junior Design</span><span>Spring 2026</span></p>
+              <h3 class="case-title">Wrist Support for Catheter Insertion</h3>
               <dl class="case-story">
                 <div>
                   <dt>Problem</dt>
-                  <dd>ICU clinicians need the wrist held at the right extension angle while they place and secure a radial artery catheter. If the wrist moves, the catheter can dislodge and pressure readings become unreliable.</dd>
+                  <dd>If the wrist moves during radial artery catheter placement in the ICU, the catheter can dislodge and pressure readings become unreliable.</dd>
                 </div>
                 <div>
                   <dt>What I did</dt>
-                  <dd>With a 5-person BME team, I redesigned an existing support so it could be mass manufactured. I led concept generation and prototyping through several 3D-printed iterations, and we added adjustable wrist extension (a plunger spring pin on a lathe-turned hinge pin) and a catheter securement attachment.</dd>
+                  <dd>Redesigned an existing support for mass manufacture with a 5-person team. I led concepts and 3D-printed prototypes, and we added adjustable wrist extension and a catheter securement attachment.</dd>
                 </div>
                 <div>
                   <dt>Result</dt>
-                  <dd>We carried it through fabrication, and I CNC machined the final parts from Delrin.</dd>
+                  <dd>Carried through fabrication. I CNC machined the final parts from Delrin.</dd>
                 </div>
               </dl>
-              <ul class="tags"><li>SolidWorks</li><li>3D printing</li><li>CNC machining</li><li>DFM</li></ul>
             </div>
           </article>
 
@@ -281,41 +235,38 @@
                 shadow-intensity="0.8"
                 exposure="0.95"
               ></model-viewer>
-              <span class="media-hint" aria-hidden="true">Drag to rotate</span>
             </div>
             <div class="case-body">
-              <p class="case-meta"><span>Rehab robotics</span><span>Human Robotics Lab · Spring 2025</span></p>
-              <h3 class="case-title">MRI-Compatible Support for the StretchWrist Robot</h3>
+              <p class="case-meta"><span>Human Robotics Lab</span><span>Spring 2025</span></p>
+              <h3 class="case-title">MRI-Compatible Support for a Rehab Robot</h3>
               <dl class="case-story">
                 <div>
                   <dt>Problem</dt>
-                  <dd>The lab's wrist rehab robot runs stroke-patient studies inside an MRI scanner. Patients' arms have to be supported in the bore, and nothing ferromagnetic can go near the magnet.</dd>
+                  <dd>Stroke patients' arms need support inside the MRI bore during robot studies, and nothing ferromagnetic can go near the magnet.</dd>
                 </div>
                 <div>
                   <dt>What I did</dt>
-                  <dd>Designed an adjustable support in SolidWorks, sourced non-ferrous materials (brass and plywood), built it, and checked its fit against the scanner bore.</dd>
+                  <dd>Designed an adjustable support in SolidWorks, built it from brass and plywood, and verified its fit against the scanner bore.</dd>
                 </div>
                 <div>
                   <dt>Result</dt>
-                  <dd>The adjustability cuts down how much patients have to be maneuvered during setup. I also supported a PhD candidate's stroke-patient trials alongside clinical staff.</dd>
+                  <dd>Less patient maneuvering during setup for the lab's stroke-patient trials.</dd>
                 </div>
               </dl>
-              <ul class="tags"><li>SolidWorks</li><li>MRI safety</li><li>Material selection</li><li>Woodworking</li></ul>
             </div>
           </article>
 
-          <!-- More hardware -->
-          <h3 class="subhead">More hardware</h3>
-          <div class="cards cards--two">
+          <!-- More projects -->
+          <h3 class="subhead">More projects</h3>
+          <div class="cards">
             <article class="card" id="project-control-box">
               <div class="card-media">
                 <img src="images/work/control-box.jpg" alt="Inside the StretchWrist control box: circuit boards, motor drivers, power supplies, and wiring" loading="lazy" width="1088" height="684" />
               </div>
               <div class="card-body">
-                <p class="case-meta"><span>Electromechanical</span><span>Human Robotics Lab · Fall 2024</span></p>
-                <h4 class="card-title">A second control box for the MRI robot</h4>
-                <p>I assembled and configured a duplicate of the StretchWrist robot's control box (circuit boards, hardware, motor drivers) and reorganized its wiring. The scanner site now has its own unit, so the sensitive original never has to be transported.</p>
-                <ul class="tags"><li>Soldering</li><li>Motor drivers</li><li>Wiring</li></ul>
+                <p class="case-meta"><span>Human Robotics Lab</span><span>Fall 2024</span></p>
+                <h4 class="card-title">Second Control Box for the MRI Robot</h4>
+                <p>Assembled and configured a duplicate control box (circuit boards, motor drivers, wiring) so the scanner site has its own unit.</p>
               </div>
             </article>
 
@@ -324,28 +275,21 @@
                 <img src="images/work/tolerancing.jpg" alt="Three machined aluminum blocks with a row of labeled bores, sitting on a wooden bench" loading="lazy" width="1600" height="1307" />
               </div>
               <div class="card-body">
-                <p class="case-meta"><span>Manufacturing &amp; quality</span><span>Mechanical Design</span></p>
-                <h4 class="card-title">Tolerance analysis of a multi-part assembly</h4>
-                <p>Ran worst-case and RSS stack-ups on every mating interface, applied GD&amp;T, and produced fully dimensioned drawings to ASME Y14.5, so each fit works across the full range of manufacturing variation.</p>
-                <ul class="tags"><li>GD&amp;T</li><li>ASME Y14.5</li><li>Stack-ups</li></ul>
+                <p class="case-meta"><span>Mechanical Design</span></p>
+                <h4 class="card-title">Tolerance Stack-Up Analysis</h4>
+                <p>Worst-case and RSS stack-ups, GD&amp;T, and ASME Y14.5 drawings for a multi-part assembly.</p>
               </div>
             </article>
-          </div>
 
-          <!-- Research -->
-          <h3 class="subhead">Research &amp; analysis</h3>
-          <div class="cards">
             <article class="card" id="project-emg">
               <a class="card-media" href="images/emg-analysis-poster.pdf" target="_blank" rel="noopener" data-pdf="images/emg-analysis-poster.pdf" data-title="Stretch Reflex EMG: Pre-Processing Comparison">
                 <img src="images/work/emg.jpg" alt="Connor presenting his EMG research poster at the Delaware INBRE symposium" loading="lazy" width="1600" height="1230" />
               </a>
               <div class="card-body">
-                <p class="case-meta"><span>Research</span><span>Delaware INBRE · Summer 2025</span></p>
-                <h4 class="card-title">Does the EMG filter change the result?</h4>
-                <p class="card-sub">Effects of pre-processing parameters on stretch-reflex EMG</p>
-                <p>There's no standard pipeline for surface EMG, so I built a MATLAB tool that ran eight of them on the same stretch-reflex data and tested the effect on significance with mixed models and Tukey HSD. The lab's results held up under every pipeline.</p>
-                <ul class="tags"><li>MATLAB</li><li>Signal processing</li><li>Mixed models</li></ul>
-                <a class="card-link" href="images/emg-analysis-poster.pdf" target="_blank" rel="noopener" data-pdf="images/emg-analysis-poster.pdf" data-title="Stretch Reflex EMG: Pre-Processing Comparison">View poster <span aria-hidden="true">↗</span></a>
+                <p class="case-meta"><span>Delaware INBRE</span><span>Summer 2025</span></p>
+                <h4 class="card-title">EMG Pre-Processing Comparison</h4>
+                <p>Built a MATLAB tool that ran eight EMG pipelines on the same stretch-reflex data. The lab's results held up under all eight.</p>
+                <a class="card-link" href="images/emg-analysis-poster.pdf" target="_blank" rel="noopener" data-pdf="images/emg-analysis-poster.pdf" data-title="Stretch Reflex EMG: Pre-Processing Comparison">Poster <span aria-hidden="true">↗</span></a>
               </div>
             </article>
 
@@ -354,12 +298,10 @@
                 <img src="images/work/clinical-presentation-cover.jpg" alt="Title slide of the backpack loading gait study presentation" loading="lazy" width="1400" height="787" />
               </a>
               <div class="card-body">
-                <p class="case-meta"><span>Biomechanics</span><span>Clinical Biomechanics · Team of 4</span></p>
-                <h4 class="card-title">How much backpack is too much?</h4>
-                <p class="card-sub">Graduated loading and sagittal-plane gait kinematics, n = 15</p>
-                <p>Fifteen participants walked carrying 0%, 10%, and 20% of their body weight. Mean trunk lean went from 7.96° to 12.07° at 20%, but people adapted so differently that the group-level effect wasn't significant.</p>
-                <ul class="tags"><li>Kinovea</li><li>JMP</li><li>RM-ANOVA</li></ul>
-                <a class="card-link" href="images/clinical-manuscript.pdf" target="_blank" rel="noopener" data-pdf="images/clinical-manuscript.pdf" data-title="Backpack Loading Gait Study: Manuscript">Read manuscript <span aria-hidden="true">↗</span></a>
+                <p class="case-meta"><span>Clinical Biomechanics</span><span>Team of 4</span></p>
+                <h4 class="card-title">Backpack Loading Gait Study</h4>
+                <p>Measured gait in 15 people carrying up to 20% of body weight. Trunk lean rose from 7.96° to 12.07°.</p>
+                <a class="card-link" href="images/clinical-manuscript.pdf" target="_blank" rel="noopener" data-pdf="images/clinical-manuscript.pdf" data-title="Backpack Loading Gait Study: Manuscript">Manuscript <span aria-hidden="true">↗</span></a>
               </div>
             </article>
 
@@ -368,77 +310,25 @@
                 <img src="images/work/programming-project-cover.jpg" alt="First page of the digoxin pharmacokinetic modeling report" loading="lazy" width="1082" height="1400" />
               </a>
               <div class="card-body">
-                <p class="case-meta"><span>Computational</span><span>Pharmaceutical Modeling · Spring 2026</span></p>
-                <h4 class="card-title">Modeling a narrow therapeutic window</h4>
-                <p class="card-sub">Three-compartment pharmacokinetic model of IV digoxin</p>
-                <p>A MATLAB ODE model of digoxin moving through plasma, peripheral tissue, and deep tissue. I used Claude to speed up the implementation, debug the stiff ODE solver, and pressure-test my modeling assumptions.</p>
-                <ul class="tags"><li>MATLAB</li><li>ODEs</li><li>Claude</li></ul>
-                <a class="card-link" href="images/programming-project.pdf" target="_blank" rel="noopener" data-pdf="images/programming-project.pdf" data-title="Digoxin Three-Compartment Model">Read report <span aria-hidden="true">↗</span></a>
+                <p class="case-meta"><span>Pharmaceutical Modeling</span><span>Spring 2026</span></p>
+                <h4 class="card-title">Digoxin Pharmacokinetic Model</h4>
+                <p>Three-compartment ODE model in MATLAB, built with Claude to speed up implementation and debugging.</p>
+                <a class="card-link" href="images/programming-project.pdf" target="_blank" rel="noopener" data-pdf="images/programming-project.pdf" data-title="Digoxin Three-Compartment Model">Report <span aria-hidden="true">↗</span></a>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section class="section section--raised" id="about">
-        <div class="container">
-          <header class="section-head">
-            <p class="section-label"><span>§02</span> About</p>
-            <h2 class="section-title">A bit about me.</h2>
-          </header>
-
-          <div class="about-grid">
-            <figure class="about-photo">
-              <img src="images/work/headshot.jpg" alt="Headshot of Connor Spinelli" loading="lazy" width="1000" height="1249" />
-            </figure>
-            <div class="about-copy">
-              <p>
-                I'm a senior in the University of Delaware's Biomedical Engineering Honors program,
-                minoring in Biomechanical Engineering, and I'll finish a 4+1 <strong>MS in Robotics</strong>
-                in May 2028.
-              </p>
-              <p>
-                I'm a <strong>machine shop TA</strong> in the Spencer Lab Design Studio. I coach 100+
-                students a semester from CAD to finished part on the mills, lathes, laser cutters, and
-                3D printers, and I help with sponsored senior design builds for NASA, Merck, Bloom
-                Energy, and Under Armour. Before that I spent a little over a year in the
-                <strong>Human Robotics Lab</strong> building hardware for an MRI wrist rehab robot and
-                analyzing EMG for stroke research.
-              </p>
-              <p>
-                This summer I joined <strong>Proscia</strong> in Philly as an AI automation intern. It
-                wasn't the design and prototyping work I was mostly looking for, but I got to build
-                with AI every day, which I'm really fascinated by, and they kept me on part-time.
-              </p>
-
-              <blockquote class="pull">
-                <p>Behind every good design is a pile of failed ones somebody learned from.</p>
-              </blockquote>
-
-              <ul class="facts">
-                <li><strong>3.62</strong><span>GPA · Honors</span></li>
-                <li><strong>4×</strong><span>Dean's List</span></li>
-                <li><strong>100+</strong><span>Students coached each semester</span></li>
-                <li><strong>17</strong><span>Countries visited</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- EXPERIENCE -->
-      <section class="section" id="experience">
+      <section class="section section--raised" id="experience">
         <div class="container">
-          <header class="section-head">
-            <p class="section-label"><span>§03</span> Experience</p>
-            <h2 class="section-title">Since 2023.</h2>
-          </header>
+          <h2 class="section-title">Experience</h2>
 
           <div class="legend" aria-hidden="true">
             <span class="legend-item" data-type="education">Education</span>
             <span class="legend-item" data-type="research">Research</span>
-            <span class="legend-item" data-type="work">Work &amp; internships</span>
+            <span class="legend-item" data-type="work">Work</span>
             <span class="legend-item" data-type="leadership">Leadership</span>
           </div>
 
@@ -446,24 +336,12 @@
           <div class="gantt" id="gantt" aria-hidden="true"></div>
           <ol class="xp-list" id="xp-list" aria-label="Experience, most recent first"></ol>
 
-          <div class="toolkit">
-            <div class="toolkit-group">
-              <h3>Design &amp; CAD</h3>
-              <ul><li>SolidWorks</li><li>Fusion 360 · AutoCAD</li><li>GD&amp;T · ASME Y14.5</li><li>Tolerance stack-ups</li><li>Design for manufacturing</li></ul>
-            </div>
-            <div class="toolkit-group">
-              <h3>Fabrication</h3>
-              <ul><li>CNC milling &amp; programming</li><li>Manual mill &amp; lathe</li><li>Laser cutting · 3D printing</li><li>Soldering · breadboard circuits</li><li>Woodshop · metal forming</li></ul>
-            </div>
-            <div class="toolkit-group">
-              <h3>Analysis &amp; code</h3>
-              <ul><li>Python</li><li>MATLAB · Simulink</li><li>EMG signal processing</li><li>JMP · mixed-model stats</li><li>ImageJ · Kinovea</li></ul>
-            </div>
-            <div class="toolkit-group">
-              <h3>AI &amp; automation</h3>
-              <ul><li>Agentic engineering</li><li>MCP integrations</li><li>Claude · Claude Cowork</li><li>Jira · Confluence · Paligo</li><li>Section 508 / WCAG remediation</li></ul>
-            </div>
-          </div>
+          <dl class="skills">
+            <div><dt>Design</dt><dd>SolidWorks, Fusion 360, AutoCAD, GD&amp;T, tolerance stack-ups</dd></div>
+            <div><dt>Fabrication</dt><dd>CNC mill &amp; lathe, laser cutting, 3D printing, soldering, woodshop</dd></div>
+            <div><dt>Analysis</dt><dd>Python, MATLAB, Simulink, JMP, ImageJ, EMG signal processing</dd></div>
+            <div><dt>AI</dt><dd>Agent pipelines, MCP integrations, Claude, Jira, Confluence</dd></div>
+          </dl>
 
           <details class="certs">
             <summary>Certifications <span class="certs-count">6</span></summary>
@@ -471,7 +349,7 @@
               <li><span>MathWorks</span><a href="certificates/matlab-onramp.pdf" target="_blank" rel="noopener">MATLAB Onramp ↗</a></li>
               <li><span>MathWorks</span><a href="certificates/matlab-simulink-onramp.pdf" target="_blank" rel="noopener">Simulink Onramp ↗</a></li>
               <li><span>MathWorks</span><a href="certificates/matlab-signal-processing.pdf" target="_blank" rel="noopener">Signal Processing Onramp ↗</a></li>
-              <li><span>CITI Program</span><a href="certificates/human-subjects-protection.pdf" target="_blank" rel="noopener">Human Subjects Protections: Biomedical ↗</a></li>
+              <li><span>CITI Program</span><a href="certificates/human-subjects-protection.pdf" target="_blank" rel="noopener">Human Subjects Protections ↗</a></li>
               <li><span>CITI Program</span><a href="certificates/responsible-conduct-research.pdf" target="_blank" rel="noopener">Responsible Conduct of Research ↗</a></li>
               <li><span>CITI Program</span><a href="certificates/good-clinical-practice.pdf" target="_blank" rel="noopener">Good Clinical Practice ↗</a></li>
             </ul>
@@ -479,13 +357,46 @@
         </div>
       </section>
 
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+
+          <div class="about-grid">
+            <figure class="about-photo">
+              <img src="images/work/headshot.jpg" alt="Headshot of Connor Spinelli" loading="lazy" width="1000" height="1249" />
+            </figure>
+            <div class="about-copy">
+              <p>
+                I'm a BME Honors senior at the University of Delaware, minoring in Biomechanical
+                Engineering and finishing a 4+1 MS in Robotics in May 2028.
+              </p>
+              <p>
+                As a machine shop TA in Spencer Lab, I coach 100+ students a semester from CAD to
+                finished part and help with sponsored senior design builds for NASA, Merck, Bloom
+                Energy, and Under Armour.
+              </p>
+
+              <blockquote class="pull">
+                <p>Behind every good design is a pile of failed ones somebody learned from.</p>
+              </blockquote>
+
+              <ul class="facts">
+                <li><strong>3.62</strong><span>GPA</span></li>
+                <li><strong>4×</strong><span>Dean's List</span></li>
+                <li><strong>100+</strong><span>Students coached a semester</span></li>
+                <li><strong>17</strong><span>Countries visited</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- OFF THE CLOCK -->
       <section class="section section--raised" id="life">
         <div class="container">
-          <header class="section-head">
-            <p class="section-label"><span>§04</span> Off the clock</p>
-            <h2 class="section-title">Where I go when I'm not in the shop.</h2>
-          </header>
+          <h2 class="section-title">Off the clock</h2>
+          <p class="section-sub">Skiing, golf, backpacking, diving, lifting, DJing, and 17 countries so far.</p>
 
           <div class="mosaic">
             <figure class="tile tile--wide">
@@ -498,22 +409,12 @@
             </figure>
             <figure class="tile">
               <img src="images/life/scuba.jpg" alt="Connor scuba diving over a coral reef in Cozumel" loading="lazy" width="1600" height="1200" />
-              <figcaption>Diving in Cozumel, Mexico</figcaption>
+              <figcaption>Cozumel, Mexico</figcaption>
             </figure>
             <figure class="tile tile--portrait">
               <img src="images/life/patriots.jpg" alt="Connor in a Patriots jersey raising a fist in falling snow outside the stadium at night" loading="lazy" width="1200" height="1600" />
               <figcaption>Patriots game in the snow</figcaption>
             </figure>
-          </div>
-
-          <div class="life-note">
-            <p>
-              I've been to 17 countries so far. When I'm home I'm usually skiing, golfing, lifting,
-              or DJing.
-            </p>
-            <ul class="hobbies">
-              <li>Skiing</li><li>Golf</li><li>Backpacking</li><li>Scuba</li><li>Running</li><li>Lifting</li><li>DJing &amp; mixing</li><li>Travel</li>
-            </ul>
           </div>
         </div>
       </section>
@@ -522,11 +423,10 @@
       <section class="section contact" id="contact">
         <div class="container contact-grid">
           <div class="contact-copy">
-            <p class="section-label"><span>§05</span> Contact</p>
-            <h2 class="contact-title">Hiring for device, robotics, or manufacturing work? <em>Let's talk.</em></h2>
+            <h2 class="contact-title">Let's <em>talk.</em></h2>
             <p>
-              I'm looking for internships and full-time roles in medical device R&amp;D, manufacturing
-              and quality, robotics, and systems engineering, and I bring AI automation into all of it. Email is the fastest way to reach me.
+              Looking for internships and full-time roles in medical devices, manufacturing and
+              quality, robotics, and systems engineering.
             </p>
             <a class="contact-email" href="mailto:cspin@udel.edu">cspin@udel.edu</a>
             <ul class="contact-links">
@@ -547,7 +447,7 @@
             </div>
             <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <textarea id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send message</button>
             <p class="form-status" id="form-status" aria-live="polite"></p>
@@ -559,7 +459,6 @@
     <footer class="footer">
       <div class="container footer-inner">
         <p>© <span id="year">2026</span> Connor Spinelli</p>
-        <p>Built with HTML, CSS &amp; JavaScript · Hosted on GitHub Pages</p>
       </div>
     </footer>
 

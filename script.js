@@ -6,27 +6,27 @@
    ============================================================ */
 const EXPERIENCE = [
   { label: 'BS Biomedical Eng. (Honors)', title: 'BS Biomedical Engineering (Honors)', org: 'University of Delaware',
-    type: 'education', start: '2023-08', end: '2027-05', note: "Minor in Biomechanical Engineering · 3.62 GPA · Dean's List 4×" },
-  { label: 'Warehouse Associate, GPS', title: 'Warehouse Associate', org: 'General Plumbing Supply, Piscataway, NJ',
-    type: 'work', start: '2024-06', end: '2024-08', note: 'Picked, packed, and tracked concurrent orders; operated a forklift.' },
-  { label: 'Researcher, Human Robotics Lab', title: 'Assistant Researcher', org: 'Human Robotics Lab, UD',
-    type: 'research', start: '2024-08', end: '2025-10', note: 'MRI-compatible hardware for the StretchWrist robot, EMG analysis, and support for stroke-patient trials.' },
-  { label: 'VP, Sigma Pi Iota-Beta', title: '2nd Counselor / Vice President', org: 'Sigma Pi, Iota-Beta Chapter',
-    type: 'leadership', start: '2024-11', end: '2025-11', note: 'Managed 21 chair positions and their committees; ran weekly chapter meetings.' },
+    type: 'education', start: '2023-08', end: '2027-05', note: 'Minor in Biomechanical Engineering' },
+  { label: 'Warehouse Associate', title: 'Warehouse Associate', org: 'General Plumbing Supply',
+    type: 'work', start: '2024-06', end: '2024-08', inList: false },
+  { label: 'Human Robotics Lab', title: 'Assistant Researcher', org: 'Human Robotics Lab, UD',
+    type: 'research', start: '2024-08', end: '2025-10', note: 'MRI-compatible robot hardware and EMG analysis for stroke rehab studies.' },
+  { label: 'VP, Sigma Pi', title: 'Vice President', org: 'Sigma Pi, Iota-Beta Chapter',
+    type: 'leadership', start: '2024-11', end: '2025-11', note: 'Managed 21 chair positions and their committees.' },
   { label: 'VP Judicial Affairs, IFC', title: 'VP of Judicial Affairs & Expansion', org: 'Interfraternity Council, UD',
-    type: 'leadership', start: '2025-05', end: null, note: 'Compliance and policy for 29 chapters and 1,800+ members.' },
-  { label: 'INBRE Summer Researcher', title: 'Undergraduate Researcher', org: 'Delaware INBRE Summer Program',
-    type: 'research', start: '2025-06', end: '2025-08', note: 'Built the eight-pipeline EMG comparison tool and presented the poster.' },
-  { label: 'Machine Shop TA, Spencer Lab', title: 'Machine Shop Teaching Assistant', org: 'Design Studio, Spencer Lab, UD',
-    type: 'work', start: '2025-08', end: null, note: 'Coach 100+ students a semester from CAD to finished part; support senior design builds for NASA, Merck, Bloom Energy, and Under Armour.' },
+    type: 'leadership', start: '2025-05', end: null, note: 'Compliance and policy for 29 chapters, 1,800+ members.' },
+  { label: 'INBRE Summer Research', title: 'Undergraduate Researcher', org: 'Delaware INBRE',
+    type: 'research', start: '2025-06', end: '2025-08', note: 'EMG pipeline comparison, presented as a poster.' },
+  { label: 'Machine Shop TA', title: 'Machine Shop Teaching Assistant', org: 'Spencer Lab Design Studio, UD',
+    type: 'work', start: '2025-08', end: null, note: '100+ students a semester; senior design builds for NASA, Merck, Bloom Energy, Under Armour.' },
   { label: 'Biomechanical Eng. Minor', title: 'Biomechanical Engineering Minor', org: 'University of Delaware',
-    type: 'education', start: '2026-02', milestone: true, note: 'Declared alongside the BME honors track.' },
-  { label: 'AI Automation Intern, Proscia', title: 'Technical Content & AI Automation Intern', org: 'Proscia, Philadelphia, PA',
-    type: 'work', start: '2026-06', end: null, note: 'Two-stage Python agent pipeline for release docs, 6 agent skills, 2 MCP connectors. Part-time during the school year.' },
-  { label: 'Capstone, Terumo Medical', title: 'Capstone Design (Team 213)', org: 'Sponsored by Terumo Medical',
-    type: 'education', start: '2026-08', end: '2027-05', note: 'Instrumented sensing probe. I own the DAQ firmware.' },
-  { label: '4+1 MS Robotics', title: 'MS Robotics (4+1 accelerated)', org: 'University of Delaware',
-    type: 'education', start: '2026-08', end: '2028-05', note: 'Graduate coursework alongside the BS, finishing May 2028.' },
+    type: 'education', start: '2026-02', milestone: true, inList: false },
+  { label: 'Proscia', title: 'AI Automation Intern', org: 'Proscia, Philadelphia',
+    type: 'work', start: '2026-06', end: null, note: 'Agent pipelines and MCP connectors for the content team. Part-time during the school year.' },
+  { label: 'Capstone, Terumo Medical', title: 'Capstone Design', org: 'Sponsored by Terumo Medical',
+    type: 'education', start: '2026-08', end: '2027-05', inList: false },
+  { label: '4+1 MS Robotics', title: 'MS Robotics (4+1)', org: 'University of Delaware',
+    type: 'education', start: '2026-08', end: '2028-05', inList: false },
 ];
 
 const AXIS_START = '2023-08';
@@ -107,7 +107,7 @@ function renderGantt() {
   root.querySelectorAll('[data-i]').forEach(el => {
     const show = () => {
       const e = EXPERIENCE[+el.dataset.i];
-      tip.innerHTML = `<em>${dateRange(e)}</em><strong>${e.title}</strong>${e.org}<br>${e.note || ''}`;
+      tip.innerHTML = `<em>${dateRange(e)}</em><strong>${e.title}</strong>${e.org}${e.note ? `<br>${e.note}` : ''}`;
       const r = el.getBoundingClientRect(), box = root.getBoundingClientRect();
       tip.classList.add('is-visible');
       const tw = tip.offsetWidth;
@@ -127,7 +127,7 @@ function renderGantt() {
 function renderXpList() {
   const list = document.getElementById('xp-list');
   if (!list) return;
-  const sorted = [...EXPERIENCE].sort((a, b) => b.start.localeCompare(a.start));
+  const sorted = EXPERIENCE.filter(e => e.inList !== false && e.type !== 'education').sort((a, b) => b.start.localeCompare(a.start));
   list.innerHTML = sorted.map(e => `
     <li class="xp-item${e.todo ? ' xp-item--todo' : ''}" data-type="${e.type}">
       <div>
@@ -198,8 +198,8 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
 const revealGroups = [
-  '.section-head', '.case', '.cards .card', '.about-photo', '.about-copy',
-  '.gantt', '.toolkit-group', '.mosaic .tile', '.life-note', '.contact-copy', '.contact-form', '.process li'
+  '.section-title', '.case', '.cards .card', '.about-photo', '.about-copy',
+  '.gantt', '.xp-item', '.skills', '.mosaic .tile', '.contact-copy', '.contact-form'
 ];
 revealGroups.forEach(sel => {
   document.querySelectorAll(sel).forEach((el, i) => {
