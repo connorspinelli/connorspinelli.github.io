@@ -157,10 +157,24 @@ const setMenu = open => {
   navToggle.setAttribute('aria-expanded', String(open));
   navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   navLinks.classList.toggle('is-open', open);
+  document.body.classList.toggle('menu-open', open);
 };
 navToggle.addEventListener('click', () => setMenu(navToggle.getAttribute('aria-expanded') !== 'true'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', e => {
+  const wasOpen = navLinks.classList.contains('is-open');
+  setMenu(false);
+  // With the mobile menu open the page is scroll-locked, so jump to the section ourselves
+  const target = wasOpen && link.hash && document.querySelector(link.hash);
+  if (!target) return;
+  e.preventDefault();
+  requestAnimationFrame(() => {
+    const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto' });
+    history.pushState(null, '', link.hash);
+  });
+}));
 document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+matchMedia('(min-width: 861px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 
 const navAnchors = [...navLinks.querySelectorAll('a[href^="#"]')];
 const sectionObserver = new IntersectionObserver(entries => {

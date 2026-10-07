@@ -989,7 +989,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
 .certs-list li {
   display: flex;
   flex-direction: column;
-  padding: .7rem 0;
+  padding: .55rem 0 .15rem;
   border-top: 1px solid var(--line);
 }
 .certs-list span {
@@ -999,7 +999,7 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
   text-transform: uppercase;
   color: var(--text-dim);
 }
-.certs-list a { font-weight: 600; font-size: .95rem; }
+.certs-list a { font-weight: 600; font-size: .95rem; display: block; padding: .5rem 0; }
 .certs-list a:hover { color: var(--copper-hi); }
 
 /* ============================================================
@@ -1132,6 +1132,11 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
   color: var(--text-muted);
 }
 .contact-links a:hover { color: var(--text); }
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
 
 .contact-form {
   display: grid;
@@ -1255,12 +1260,17 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
   .nav-toggle { display: block; }
   .nav-links {
     position: fixed;
-    inset: var(--nav-h) 0 auto 0;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    height: calc(100dvh - var(--nav-h));
+    overflow-y: auto;
+    overscroll-behavior: contain;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: .5rem var(--gutter) 1.5rem;
-    background: rgba(20, 17, 15, .97);
+    padding: .5rem var(--gutter) 2rem;
+    background: var(--bg);
     border-bottom: 1px solid var(--line);
     font-size: 1.05rem;
     transform: translateY(-8px);
@@ -1269,10 +1279,12 @@ h1, h2, h3, h4 { font-weight: 600; line-height: 1.15; }
     transition: opacity .25s, transform .25s var(--ease), visibility .25s;
   }
   .nav-links.is-open { opacity: 1; transform: none; visibility: visible; }
-  .nav-links a { padding: .85rem 0; border-bottom: 1px solid var(--line); }
+  .nav-links a { padding: 1rem 0; border-bottom: 1px solid var(--line); font-size: 1.2rem; }
   .nav-links a::after { display: none; }
   .nav-cta { margin-top: 1rem; text-align: center; border-bottom: 1px solid var(--line-strong) !important; }
   .nav { background: rgba(20, 17, 15, .82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .nav:has(.nav-links.is-open) { background: var(--bg); }
+  body.menu-open { overflow: hidden; }
 
   .hero-grid { grid-template-columns: 1fr; }
   .hero-figure { max-width: 420px; }
