@@ -187,41 +187,6 @@ const sectionObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('main > section[id]').forEach(s => sectionObserver.observe(s));
 
 /* ============================================================
-   Scroll reveal
-   ============================================================ */
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-in');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-const revealGroups = [
-  '.section-title', '.case', '.cards .card', '.about-photo', '.about-copy',
-  '.gantt', '.xp-item', '.skills', '.mosaic .tile', '.contact-copy', '.contact-form'
-];
-revealGroups.forEach(sel => {
-  document.querySelectorAll(sel).forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.setProperty('--d', `${(i % 5) * 70}ms`);
-    revealObserver.observe(el);
-  });
-});
-
-/* ============================================================
-   3D viewers — hide hint after first interaction
-   ============================================================ */
-document.querySelectorAll('model-viewer').forEach(viewer => {
-  const hint = viewer.parentElement.querySelector('.media-hint');
-  if (!hint) return;
-  viewer.addEventListener('camera-change', e => {
-    if (e.detail.source === 'user-interaction') hint.classList.add('is-hidden');
-  });
-});
-
-/* ============================================================
    Wrist support: 3D model / annotated toggle
    ============================================================ */
 document.querySelectorAll('[data-set-view]').forEach(btn => {
